@@ -15,6 +15,8 @@ export default function Home() {
       <br />
       {/* route dynamique */}
       <Link href="/articles">articles</Link>
+      <br />
+      {/* Client side component */}
       <Button />
     </main>
   );
