@@ -3,11 +3,16 @@ import Link from "next/link";
 import Button from "./ui/Button";
 
 const getData = async () => {
-  const res = await fetch("http://localhost:4000/articles");
-  const data = await res.json();
-  return data;
+  try {
+    const res = await fetch(`http://localhost:4000/articles`);
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.log("Error fetching articles", err);
+  }
 };
 
+// Definition of types
 type Article = {
   id: number;
   title: string;
@@ -18,10 +23,10 @@ type Article = {
 
 export default async function Home() {
   const articles = await getData();
-  console.log(articles);
+  // console.log(articles);
 
   return (
-    <main className="">
+    <main>
       <h1>Welcome ! </h1>
 
       {/* route conventionnelle */}
@@ -37,10 +42,13 @@ export default async function Home() {
 
       <div className="container">
         {articles.map((article: Article) => (
-          <div key={article.id} className="card">
-            <h3>{article.id}</h3>
-            <p>{article.author}</p>
-          </div>
+          <Link
+            key={article.id}
+            className="card"
+            href={`/articles/${article.id}`}
+          >
+            {article.id}. {article.title}
+          </Link>
         ))}
       </div>
     </main>

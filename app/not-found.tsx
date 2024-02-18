@@ -1,7 +1,7 @@
-import * as React from "react";
+import React from "react";
 
 export interface IAppProps {}
 
-export default function App(props: IAppProps) {
+export default function NotFound(props: IAppProps) {
   return <div>Not found</div>;
 }

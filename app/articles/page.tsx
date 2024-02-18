@@ -1,8 +1,9 @@
-import * as React from "react";
 import Link from "next/link";
-export interface IAppProps {}
+import React from "react";
 
-export default function App(props: IAppProps) {
+type Props = {};
+
+export default function page({}: Props) {
   return (
     <div>
       <ul>
@@ -10,13 +11,10 @@ export default function App(props: IAppProps) {
           <Link href="/articles/1">Article 1</Link>
         </li>
         <li>
-          <Link href="/articles/2">Article 2</Link>
+          <Link href="/articles/2">Article 2 </Link>
         </li>
         <li>
           <Link href="/articles/3">Article 3</Link>
-        </li>
-        <li>
-          <Link href="/articles/4">Article 4</Link>
         </li>
       </ul>
     </div>
