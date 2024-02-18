@@ -7,7 +7,7 @@ const getData = async () => {
     // Revalidation data
     const res = await fetch(`http://localhost:4000/articles`, {
       next: {
-        revalidate: 0,
+        revalidate: 10,
       },
     });
     const data = await res.json();
@@ -31,7 +31,7 @@ export default async function Home() {
   // console.log(articles);
 
   return (
-    <main>
+    <main className="px-[5rem]">
       <h1>Welcome ! </h1>
 
       {/* route conventionnelle */}
@@ -55,6 +55,10 @@ export default async function Home() {
             {article.id}. {article.title}
           </Link>
         ))}
+      </div>
+      <div className="mt-[5rem] p-[1rem] text-white w-32 bg-[#767676]"  >
+        
+        <Link href={"/articles/create"}>Add a article</Link>
       </div>
     </main>
   );
