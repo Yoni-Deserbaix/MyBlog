@@ -15,6 +15,10 @@ const config: Config = {
       },
     },
   },
+  daisyui: {
+     themes: ["light", "dark", "cupcake", "synthwave"],
+   },
   plugins: [require("daisyui")],
+  
 };
 export default config;
