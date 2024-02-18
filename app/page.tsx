@@ -31,7 +31,7 @@ export default async function Home() {
   // console.log(articles);
 
   return (
-    <main className="px-[5rem]">
+    <main className="px-[5rem]  h-[100%]">
       <h1>Welcome ! </h1>
 
       {/* route conventionnelle */}
@@ -56,8 +56,7 @@ export default async function Home() {
           </Link>
         ))}
       </div>
-      <div className="mt-[5rem] p-[1rem] text-white w-32 bg-[#767676]"  >
-        
+      <div className="m-[5rem] p-[1rem] w-32 border">
         <Link href={"/articles/create"}>Add a article</Link>
       </div>
     </main>
