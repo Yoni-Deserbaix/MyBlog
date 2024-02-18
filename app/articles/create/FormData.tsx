@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import React from "react";
-
+import styles from "./formData.module.css";
 type Props = {};
 
 export default function ({}: Props) {
