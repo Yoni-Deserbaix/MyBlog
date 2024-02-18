@@ -56,8 +56,8 @@ export default async function Home() {
           </Link>
         ))}
       </div>
-      <div className="m-[5rem] p-[1rem] w-32 border">
-        <Link href={"/articles/create"}>Add a article</Link>
+      <div>
+        <Link href={"/articles/create"}  className="p-[1rem] w-32 border">Add a article</Link>
       </div>
     </main>
   );
