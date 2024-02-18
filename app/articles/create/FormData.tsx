@@ -32,22 +32,22 @@ export default function ({}: Props) {
   };
   return (
     <div className="container ">
-      <form onSubmit={handleSubmit} className="form">
-        <h1 className="titre">Add a artcile</h1>
-        <div className="form-group">
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <h1 className={styles.titre}>Add a artcile</h1>
+        <div className={styles.formGroup}>
           <label htmlFor="title">Title</label>
           <input type="text" name="title" id="title" />
         </div>
-        <div className="form-group">
+        <div className={styles.formGroup}>
           <label htmlFor="content">Content</label>
           <textarea name="content" id="content" cols={30} rows={10}></textarea>
         </div>
-        <div className="form-group">
+        <div className={styles.formGroup}>
           <label htmlFor="Author">Author</label>
           <input type="text" name="Author" id="Author" />
         </div>
         <div>
-          <button type="submit" className="btn">
+          <button type="submit" className={styles.btn}>
             Add
           </button>
         </div>
