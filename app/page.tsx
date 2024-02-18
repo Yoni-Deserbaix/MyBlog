@@ -4,7 +4,12 @@ import Button from "./ui/Button";
 
 const getData = async () => {
   try {
-    const res = await fetch(`http://localhost:4000/articles`);
+    // Revalidation data
+    const res = await fetch(`http://localhost:4000/articles`, {
+      next: {
+        revalidate: 0,
+      },
+    });
     const data = await res.json();
     return data;
   } catch (err) {

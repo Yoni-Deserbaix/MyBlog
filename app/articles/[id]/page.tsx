@@ -6,6 +6,8 @@ type Props = {
   };
 };
 
+export const revalidate = 1000;
+
 const getData = async (id: number) => {
   try {
     const res = await fetch(`http://localhost:4000/articles/${id}`);
@@ -23,7 +25,7 @@ export default async function App({ params }: Props) {
   return (
     <div className="container">
       You are on the article {params.id}
-      <h1 className="titre">{data.title}</h1>
+      <h1 className="titre py-[1rem]">{data.title}</h1>
       <p> {data.content}</p>
     </div>
   );
