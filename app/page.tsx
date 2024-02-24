@@ -4,8 +4,17 @@ import Button from "./ui/Button";
 
 const getData = async () => {
   try {
-    // Revalidation data
-    const res = await fetch(`http://localhost:4000/articles`, {
+    // Fetch data from local development server (db.json)
+    // const res = await fetch(`http://localhost:4000/articles`, {
+    //   // Revalidation data every 10sec
+    //   next: {
+    //     revalidate: 10,
+    //   },
+    // });
+
+    // Fetch data from the the Next.js API route
+    const res = await fetch(`http://localhost:3000/api/articles`, {
+      // Revalidation data every 10sec
       next: {
         revalidate: 10,
       },
@@ -28,8 +37,14 @@ type Article = {
 };
 
 export default async function Home() {
-  const articles = await getData();
-  // console.log(articles);
+  // Get data from local development server (db.json) 
+  // const articles = await getData();
+  //  console.log(articles);
+  
+  
+  // Get data from the Next.js API route
+  const {data: articles} = await getData();
+  //  console.log(articles);
 
   return (
     <main className="px-[5rem]  h-[100%]">
