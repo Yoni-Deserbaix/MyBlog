@@ -58,11 +58,13 @@ export default async function Home() {
       <div className="flex gap-5 flex-wrap">
         {articles.map((article: Article) => (
           <div className="card w-96 bg-base-100 shadow-xl">
+              <figure><Image src={article.linkImage} width={250} height={250} alt="Article Image" /></figure>
             <div className="card-body">
               <h2 className="card-title">
                 {" "}
                 {article.id}. {article.title}
               </h2>
+
               <div className="card-actions justify-end">
                 <Link
                   key={article.id}
