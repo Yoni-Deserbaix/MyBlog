@@ -39,13 +39,12 @@ type Article = {
 };
 
 export default async function Home() {
-  // Get data from local development server (db.json) 
+  // Get data from local development server (db.json)
   // const articles = await getData();
   //  console.log(articles);
-  
-  
+
   // Get data from the Next.js API route
-  const {data: articles} = await getData();
+  const { data: articles } = await getData();
   //  console.log(articles);
 
   return (
@@ -54,16 +53,18 @@ export default async function Home() {
 
       {/* route conventionnelle */}
       {/* <Link href="/login">Login</Link> */}
-      <br />
+      {/* <br /> */}
       {/* <Link href="/register">register</Link> */}
-      <br />
+      {/* <br /> */}
       {/* route dynamique */}
       {/* <Link href="/articles">articles</Link> */}
-      <br />
+      {/* <br /> */}
 
       {/* Client side component */}
-      <Button />
+      <div className="m-10">
       <ThemeController />
+      </div>
+      <Button />
       {/* Button to add a article  */}
       <div className="m-5 card-actions justify-start">
         <Link href={"/articles/create"} className="btn btn-primary">
