@@ -66,8 +66,8 @@ export default async function Home() {
           </div>
         ))}
       </div>
-      <div>
-        <Link href={"/articles/create"} className="p-[1rem] w-32 border">
+      <div className="mt-[4rem] card-actions justify-start">
+        <Link href={"/articles/create"} className="btn btn-primary">
           Add a article
         </Link>
       </div>
