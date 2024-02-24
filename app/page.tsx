@@ -48,24 +48,28 @@ export default async function Home() {
       <div className="flex gap-5 flex-wrap">
         {articles.map((article: Article) => (
           <div className="card w-96 bg-base-100 shadow-xl">
-          <div className="card-body">
-            <h2 className="card-title"> {article.id}. {article.title}</h2>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+            <div className="card-body">
+              <h2 className="card-title">
+                {" "}
+                {article.id}. {article.title}
+              </h2>
+              <div className="card-actions justify-end">
+                <Link
+                  key={article.id}
+                  href={`/articles/${article.id}`}
+                  className="btn btn-primary"
+                >
+                  Visit the article
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-          // <Link
-          //   key={article.id}
-          //   className="card"
-          //   href={`/articles/${article.id}`}
-          // >
-          //   {article.id}. {article.title}
-          // </Link>
         ))}
       </div>
       <div>
-        <Link href={"/articles/create"}  className="p-[1rem] w-32 border">Add a article</Link>
+        <Link href={"/articles/create"} className="p-[1rem] w-32 border">
+          Add a article
+        </Link>
       </div>
     </main>
   );
