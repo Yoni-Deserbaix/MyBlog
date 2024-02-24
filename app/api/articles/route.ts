@@ -1,3 +1,4 @@
+import { log } from "console";
 import { NextResponse } from "next/server";
 
 const getData = async () => {
@@ -15,6 +16,15 @@ export async function GET(req: Request) {
   const data = await getData();
   return NextResponse.json({
     message: "Data received successfully form nextjs api",
+    data,
+  });
+}
+
+// POST
+export async function POST(req: Request) {
+  const data = await req.json();
+  return NextResponse.json({
+    message: "Data sent successfully form nextjs api",
     data,
   });
 }
