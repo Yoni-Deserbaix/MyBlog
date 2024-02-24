@@ -24,6 +24,7 @@ type Article = {
   author: string;
   date: string;
   user_id: number;
+  linkImage: string;
 };
 
 export default async function Home() {
