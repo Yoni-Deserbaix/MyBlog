@@ -49,7 +49,7 @@ export default async function Home() {
 
       {/* Button to add a article  */}
       <div className="m-5 card-actions justify-start">
-        <Link href={"/articles/create"} className="btn btn-secondary">
+        <Link href={"/articles/create"} className="btn btn-primary">
           Add a article
         </Link>
       </div>
@@ -77,7 +77,7 @@ export default async function Home() {
                 <Link
                   key={article.id}
                   href={`/articles/${article.id}`}
-                  className="btn btn-accent"
+                  className="btn rounded-full btn-outline btn-secondary"
                 >
                   Visit the article
                 </Link>

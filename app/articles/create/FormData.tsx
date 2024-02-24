@@ -47,7 +47,7 @@ export default function ({}: Props) {
           <input type="text" name="Author" id="Author" />
         </div>
         <div>
-          <button type="submit" className={styles.btn}>
+          <button type="submit" className="btn btn-primary w-full">
             Add
           </button>
         </div>

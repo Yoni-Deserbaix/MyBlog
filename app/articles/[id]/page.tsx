@@ -30,7 +30,7 @@ export default async function App({ params }: Props) {
         <Link
           key={data.id}
           href={`/`}
-          className="btn btn-accent"
+          className="btn btn-outline btn-secondary"
         >
           Back
         </Link>
