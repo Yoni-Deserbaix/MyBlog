@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./ui/Button";
+import Theme from "./ui/ThemeController";
+import ThemeController from "./ui/ThemeController";
 
 const getData = async () => {
   try {
@@ -61,7 +63,7 @@ export default async function Home() {
 
       {/* Client side component */}
       <Button />
-
+      <ThemeController />
       {/* Button to add a article  */}
       <div className="m-5 card-actions justify-start">
         <Link href={"/articles/create"} className="btn btn-primary">
