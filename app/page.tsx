@@ -44,7 +44,11 @@ export default async function Home() {
       <br />
       {/* Client side component */}
       <Button />
-
+      <div className="m-5 card-actions justify-start">
+        <Link href={"/articles/create"} className="btn btn-secondary">
+          Add a article
+        </Link>
+      </div>
       <div className="flex gap-5 flex-wrap">
         {articles.map((article: Article) => (
           <div className="card w-96 bg-base-100 shadow-xl">
@@ -57,7 +61,7 @@ export default async function Home() {
                 <Link
                   key={article.id}
                   href={`/articles/${article.id}`}
-                  className="btn btn-primary"
+                  className="btn btn-accent"
                 >
                   Visit the article
                 </Link>
@@ -65,11 +69,6 @@ export default async function Home() {
             </div>
           </div>
         ))}
-      </div>
-      <div className="mt-[4rem] card-actions justify-start">
-        <Link href={"/articles/create"} className="btn btn-primary">
-          Add a article
-        </Link>
       </div>
     </main>
   );
