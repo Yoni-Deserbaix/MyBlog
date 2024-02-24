@@ -42,13 +42,18 @@ export default async function Home() {
       {/* route dynamique */}
       <Link href="/articles">articles</Link>
       <br />
+
       {/* Client side component */}
       <Button />
+
+      {/* Button to add a article  */}
       <div className="m-5 card-actions justify-start">
         <Link href={"/articles/create"} className="btn btn-secondary">
           Add a article
         </Link>
       </div>
+
+      {/* Card for articles  */}
       <div className="flex gap-5 flex-wrap">
         {articles.map((article: Article) => (
           <div className="card w-96 bg-base-100 shadow-xl">
