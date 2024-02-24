@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 type Props = {
   params: {
@@ -23,9 +25,27 @@ export default async function App({ params }: Props) {
   const data = await getData(params.id);
   // console.log(data);
   return (
-    <div className="container">
+    <div className="container card w-96 bg-base-100 shadow-xl">
+      <div className="card-actions justify-start">
+        <Link
+          key={data.id}
+          href={`/`}
+          className="btn btn-accent"
+        >
+          Back
+        </Link>
+      </div>
       You are on the article {params.id}
-      <h1 className="titre py-[1rem]">{data.title}</h1>
+      <h1 className="titre">{data.title}</h1>
+      <figure>
+        <Image
+          src={data.linkImage}
+          width={500}
+          height={500}
+          alt="Article Image"
+          className="w-full object-cover"
+        />
+      </figure>
       <p> {data.content}</p>
     </div>
   );

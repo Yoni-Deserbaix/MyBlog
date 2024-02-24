@@ -33,15 +33,15 @@ export default async function Home() {
 
   return (
     <main className="px-[5rem]  h-[100%]">
-      <h1>Welcome ! </h1>
+      {/* <h1>Welcome ! </h1> */}
 
       {/* route conventionnelle */}
-      <Link href="/login">Login</Link>
+      {/* <Link href="/login">Login</Link> */}
       <br />
-      <Link href="/register">register</Link>
+      {/* <Link href="/register">register</Link> */}
       <br />
       {/* route dynamique */}
-      <Link href="/articles">articles</Link>
+      {/* <Link href="/articles">articles</Link> */}
       <br />
 
       {/* Client side component */}
