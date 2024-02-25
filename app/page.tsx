@@ -3,6 +3,7 @@ import Link from "next/link";
 import Button from "./ui/Button";
 import Theme from "./ui/ThemeController";
 import ThemeController from "./ui/ThemeController";
+import Navbar from "./ui/Navbar";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -54,17 +55,8 @@ export default async function Home() {
   //  console.log(articles);
 
   return (
-    <main className="px-[5rem]  h-[100%]">
-      {/* <h1>Welcome ! </h1> */}
-
-      {/* route conventionnelle */}
-      {/* <Link href="/login">Login</Link> */}
-      {/* <br /> */}
-      {/* <Link href="/register">register</Link> */}
-      {/* <br /> */}
-      {/* route dynamique */}
-      {/* <Link href="/articles">articles</Link> */}
-      {/* <br /> */}
+    <main className="h-[100%]">
+      <Navbar />
 
       {/* Client side component */}
       <div className="m-10">

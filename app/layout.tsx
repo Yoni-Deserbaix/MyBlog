@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "MyBlog",
   icons: {
     icon: [
-      "https://raw.githubusercontent.com/Yoni-Deserbaix/Portfolio/main/src/assets/memoji-home.png",
+      "https://raw.githubusercontent.com/Yoni-Deserbaix/formation-Next.JS/main/app/flavicon.ico",
     ],
   },
 };
