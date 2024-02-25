@@ -19,7 +19,7 @@ export default function ({}: Props) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        id: Math.floor(Math.random() * 1000),
+        id: Math.floor(Math.random() * 1000).toString(),
         title: data.title,
         content: data.content,
         author: data.author,
