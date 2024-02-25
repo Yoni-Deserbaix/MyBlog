@@ -22,9 +22,29 @@ export async function GET(req: Request) {
 
 // POST
 export async function POST(req: Request) {
-  const data = await req.json();
+  const { title, content, author } = await req.json();
+  if (!title || !content || !author) {
+    return NextResponse.json({ message: "Please complete all fields" });
+  }
+
+  const article = {
+    id: Math.floor(Math.random() * 1000),
+    title,
+    content,
+    author,
+    date: new Date(),
+  };
+
+  await fetch("http://localhost:4000/articles", {
+    method: "POST",
+    body: JSON.stringify(article),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
   return NextResponse.json({
     message: "Data sent successfully form nextjs api",
-    data,
+    data: article,
   });
 }
