@@ -26,13 +26,12 @@ export async function GET(req: Request, { params }: RouteParams) {
   });
 }
 
-
 // PUT
 export async function PUT(req: Request, { params }: RouteParams) {
   const { title, content, author } = await req.json();
 
   const article = await getOneArticle(params.id);
- 
+
   const updatedArticle = {
     ...article,
     title: title || article.title,
@@ -51,5 +50,16 @@ export async function PUT(req: Request, { params }: RouteParams) {
   return NextResponse.json({
     message: "Data edited successfully form Next.JS api",
     data: updatedArticle,
+  });
+}
+
+// DELETE
+export async function DELETE(req: Request, { params }: RouteParams) {
+  await fetch(`http://localhost:4000/articles/${params.id}`, {
+    method: "DELETE",
+  });
+
+  return NextResponse.json({
+    message: "Data deleted successfully form Next.JS api",
   });
 }
