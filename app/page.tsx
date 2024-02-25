@@ -3,6 +3,12 @@ import Link from "next/link";
 import Button from "./ui/Button";
 import Theme from "./ui/ThemeController";
 import ThemeController from "./ui/ThemeController";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "MyBlog | Home",
+  description: "My blog | Home",
+};
 
 const getData = async () => {
   try {
@@ -62,7 +68,7 @@ export default async function Home() {
 
       {/* Client side component */}
       <div className="m-10">
-      <ThemeController />
+        <ThemeController />
       </div>
       <Button />
       {/* Button to add a article  */}
