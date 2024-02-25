@@ -38,7 +38,7 @@ export async function generateMetadata(
   return {
     title: article.title,
     description: article.content,
-    authors:[
+    authors: [
       {
         name: article.author,
       },
@@ -56,12 +56,21 @@ export default async function App({ params }: Props) {
   return (
     <div className="container card w-96 bg-base-100 shadow-xl">
       <div className="card-actions justify-start">
-        <Link
-          key={data.id}
-          href={`/`}
-          className="btn btn-outline btn-secondary"
-        >
-          Back
+        <Link key={data.id} href={`/`} className="btn rounded-full btn-sm btn-outline ">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="currentColor"
+            className="w-5 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+            />
+          </svg>
         </Link>
       </div>
       You are on the article {params.id}

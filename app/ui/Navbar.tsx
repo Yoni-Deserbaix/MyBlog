@@ -13,7 +13,9 @@ export default function NavBar() {
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               {/* LOGO */}
               <Link href="/">
-                <h2 className="btn btn-ghost text-xl text-2xl text-white-600 font-bold ">MyBlog</h2>
+                <h2 className="btn btn-ghost text-xl text-2xl text-white-600 font-bold ">
+                  MyBlog
+                </h2>
               </Link>
               {/* HAMBURGER BUTTON FOR MOBILE */}
               <div className="md:hidden">
@@ -22,13 +24,27 @@ export default function NavBar() {
                   onClick={() => setNavbar(!navbar)}
                 >
                   {navbar ? (
-                    <Image src="/close.svg" width={30} height={30} alt="logo" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      className="inline-block w-5 h-5 stroke-current"
+                      color="white"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M6 18L18 6M6 6l12 12"
+                      ></path>
+                    </svg>
                   ) : (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       className="inline-block w-5 h-5 stroke-current"
+                      color="white"
                     >
                       <path
                         strokeLinecap="round"
@@ -55,7 +71,11 @@ export default function NavBar() {
                   </Link>
                 </li>
                 <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="https://yoni-deserbaix.github.io/Portfolio/" target="_blank" onClick={() => setNavbar(!navbar)}>
+                  <Link
+                    href="https://yoni-deserbaix.github.io/Portfolio/"
+                    target="_blank"
+                    onClick={() => setNavbar(!navbar)}
+                  >
                     Portfolio
                   </Link>
                 </li>

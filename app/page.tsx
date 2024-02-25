@@ -93,7 +93,7 @@ export default async function Home() {
                 <Link
                   key={article.id}
                   href={`/articles/${article.id}`}
-                  className="btn rounded-full btn-outline btn-secondary"
+                  className="btn rounded-full btn-outline "
                 >
                   Visit the article
                 </Link>
