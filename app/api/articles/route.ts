@@ -23,9 +23,6 @@ export async function GET(req: Request) {
 // POST
 export async function POST(req: Request) {
   const { title, content, author } = await req.json();
-  if (!title || !content || !author) {
-    return NextResponse.json({ message: "Please complete all fields" });
-  }
 
   const article = {
     id: Math.floor(Math.random() * 1000).toString(),

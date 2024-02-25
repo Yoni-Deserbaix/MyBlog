@@ -1,3 +1,4 @@
+import { error } from "console";
 import { NextResponse } from "next/server";
 
 type RouteParams = {
@@ -22,5 +23,33 @@ export async function GET(req: Request, { params }: RouteParams) {
   return NextResponse.json({
     message: "Data received successfully from Next.js API",
     data,
+  });
+}
+
+
+// PUT
+export async function PUT(req: Request, { params }: RouteParams) {
+  const { title, content, author } = await req.json();
+
+  const article = await getOneArticle(params.id);
+ 
+  const updatedArticle = {
+    ...article,
+    title: title || article.title,
+    content: content || article.content,
+    author: author || article.author,
+  };
+
+  await fetch(`http://localhost:4000/articles/${params.id}`, {
+    method: "PUT",
+    body: JSON.stringify(updatedArticle),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  return NextResponse.json({
+    message: "Data edited successfully form nextjs api",
+    data: updatedArticle,
   });
 }
