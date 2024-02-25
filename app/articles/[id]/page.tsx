@@ -4,13 +4,13 @@ import Link from "next/link";
 
 type Props = {
   params: {
-    id: number;
+    id: string;
   };
 };
 
 export const revalidate = 1000;
 
-const getData = async (id: number) => {
+const getData = async (id: string) => {
   try {
     const res = await fetch(`http://localhost:4000/articles/${id}`);
     const data = await res.json();

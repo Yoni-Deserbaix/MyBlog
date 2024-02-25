@@ -28,7 +28,7 @@ export async function POST(req: Request) {
   }
 
   const article = {
-    id: Math.floor(Math.random() * 1000),
+    id: Math.floor(Math.random() * 1000).toString(),
     title,
     content,
     author,
