@@ -7,6 +7,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "MyBlog",
   description: "MyBlog",
+  icons: {
+    icon: [
+      "https://raw.githubusercontent.com/Yoni-Deserbaix/Portfolio/main/src/assets/memoji-home.png",
+    ],
+  },
 };
 
 export default function RootLayout({
