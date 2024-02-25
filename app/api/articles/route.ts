@@ -15,7 +15,7 @@ const getData = async () => {
 export async function GET(req: Request) {
   const data = await getData();
   return NextResponse.json({
-    message: "Data received successfully form nextjs api",
+    message: "Data received successfully form Next.JS api",
     data,
   });
 }
@@ -23,6 +23,9 @@ export async function GET(req: Request) {
 // POST
 export async function POST(req: Request) {
   const { title, content, author } = await req.json();
+  if (!title || !content || !author) {
+    return NextResponse.json({ message: "Please complete all fields" });
+  }
 
   const article = {
     id: Math.floor(Math.random() * 1000).toString(),
@@ -41,7 +44,7 @@ export async function POST(req: Request) {
   });
 
   return NextResponse.json({
-    message: "Data sent successfully form nextjs api",
+    message: "Data sent successfully form Next.JS api",
     data: article,
   });
 }

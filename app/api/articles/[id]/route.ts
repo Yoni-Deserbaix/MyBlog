@@ -49,7 +49,7 @@ export async function PUT(req: Request, { params }: RouteParams) {
   });
 
   return NextResponse.json({
-    message: "Data edited successfully form nextjs api",
+    message: "Data edited successfully form Next.JS api",
     data: updatedArticle,
   });
 }
