@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ResolvingMetadata, Metadata } from "next";
 
 type Props = {
   params: {
@@ -19,6 +20,34 @@ const getData = async (id: string) => {
     console.log("Error fetching articles", err);
   }
 };
+
+// Dynamic Metadata
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const id = params.id;
+
+  // fetch data
+  const article = await getData(id);
+
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title: article.title,
+    description: article.content,
+    authors:[
+      {
+        name: article.author,
+      },
+    ],
+    openGraph: {
+      images: [article.linkImage, ...previousImages],
+    },
+  };
+}
 
 // [] = route dynamique
 export default async function App({ params }: Props) {
