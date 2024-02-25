@@ -48,7 +48,7 @@ export async function PUT(req: Request, { params }: RouteParams) {
   });
 
   return NextResponse.json({
-    message: "Data edited successfully form Next.JS api",
+    message: "Data edited successfully from Next.JS api",
     data: updatedArticle,
   });
 }
@@ -60,6 +60,6 @@ export async function DELETE(req: Request, { params }: RouteParams) {
   });
 
   return NextResponse.json({
-    message: "Data deleted successfully form Next.JS api",
+    message: "Data deleted successfully from Next.JS api",
   });
 }

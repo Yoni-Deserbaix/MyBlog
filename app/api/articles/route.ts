@@ -15,7 +15,7 @@ const getData = async () => {
 export async function GET(req: Request) {
   const data = await getData();
   return NextResponse.json({
-    message: "Data received successfully form Next.JS api",
+    message: "Data received successfully from Next.JS api",
     data,
   });
 }
@@ -44,7 +44,7 @@ export async function POST(req: Request) {
   });
 
   return NextResponse.json({
-    message: "Data sent successfully form Next.JS api",
+    message: "Data sent successfully from Next.JS api",
     data: article,
   });
 }
