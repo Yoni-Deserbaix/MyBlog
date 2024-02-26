@@ -59,9 +59,7 @@ export default async function Home() {
       <Navbar />
 
       {/* Client side component */}
-      <div className="m-12">
-        {/* <ThemeController /> */}
-      </div>
+      <div className="m-12">{/* <ThemeController /> */}</div>
       <Button />
       {/* Button to add a article  */}
       <div className="m-5 card-actions justify-start">

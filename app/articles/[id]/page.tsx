@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ResolvingMetadata, Metadata } from "next";
+import Navbar from "../../ui/Navbar";
 
 type Props = {
   params: {
@@ -51,41 +52,44 @@ export default async function App({ params }: Props) {
   const data = await getData(params.id);
   // console.log(data);
   return (
-    <div className="container card w-96 bg-base-100 shadow-xl">
-      <div className="card-actions justify-start">
-        <Link
-          key={data.id}
-          href={`/`}
-          className="btn rounded-full btn-sm btn-outline "
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1"
-            stroke="currentColor"
-            className="w-5 h-6"
+    <>
+      <Navbar />
+      <div className="container card w-96 bg-base-100 shadow-xl">
+        <div className="card-actions justify-start">
+          <Link
+            key={data.id}
+            href={`/`}
+            className="btn rounded-full btn-sm btn-outline "
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
-            />
-          </svg>
-        </Link>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1"
+              stroke="currentColor"
+              className="w-5 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+              />
+            </svg>
+          </Link>
+        </div>
+        You are on the article {params.id}
+        <h1 className="titre">{data.title}</h1>
+        <figure>
+          <Image
+            src={data.linkImage}
+            width={500}
+            height={500}
+            alt="Article Image"
+            className="w-full object-cover"
+          />
+        </figure>
+        <p> {data.content}</p>
       </div>
-      You are on the article {params.id}
-      <h1 className="titre">{data.title}</h1>
-      <figure>
-        <Image
-          src={data.linkImage}
-          width={500}
-          height={500}
-          alt="Article Image"
-          className="w-full object-cover"
-        />
-      </figure>
-      <p> {data.content}</p>
-    </div>
+    </>
   );
 }
