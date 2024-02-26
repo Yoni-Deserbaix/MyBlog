@@ -62,10 +62,13 @@ export default async function Home() {
       <div className="m-12">{/* <ThemeController /> */}</div>
       <Button />
       {/* Button to add a article  */}
-      <div className="m-5 card-actions justify-start">
+      {/* <div className="m-5 card-actions justify-start">
         <Link href={"/articles/create"} className="btn rounded-full ">
           Ajouter un article
         </Link>
+      </div> */}
+      <div className="flex justify-center text-2xl font-bold mt-10">
+        Articles récents
       </div>
 
       {/* Card for articles  */}
@@ -94,7 +97,7 @@ export default async function Home() {
                 <Link
                   key={article.id}
                   href={`/articles/${article.id}`}
-                  className="btn rounded-full btn-outline "
+                  className="btn rounded-full btn-outline font-bold"
                 >
                   Visiter l'article
                 </Link>
