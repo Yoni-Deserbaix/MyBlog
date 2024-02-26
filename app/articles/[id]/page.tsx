@@ -54,12 +54,13 @@ export default async function App({ params }: Props) {
   return (
     <>
       <Navbar />
-      <div className="container card w-96 bg-base-100 shadow-xl">
+      <div className="mt-24"></div>
+      <div className="container card w-96 bg-base-100 shadow-xl ">
         <div className="card-actions justify-start">
           <Link
             key={data.id}
             href={`/`}
-            className="btn rounded-full btn-sm btn-outline "
+            className="btn rounded-full btn-sm btn-outline mt-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
