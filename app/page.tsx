@@ -81,7 +81,7 @@ export default async function Home() {
                 width={250}
                 height={250}
                 alt="Article Image"
-                className="w-full object-cover"
+                className="w-full object-cover hover:transform hover:scale-110 transition duration-300 ease-in-out"
               />
             </figure>
             <div className="card-body">
