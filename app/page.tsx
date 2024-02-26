@@ -86,6 +86,9 @@ export default async function Home() {
                 {" "}
                 {article.id}. {article.title}
               </h2>
+              <div className="flex start">
+                {article.date}
+              </div>
 
               <div className="card-actions justify-end">
                 <Link
