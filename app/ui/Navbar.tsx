@@ -14,6 +14,11 @@ export default function NavBar() {
               {/* LOGO */}
               <Link href="/">
                 <h2 className="btn btn-ghost  text-2xl text-white-600 font-bold ">
+                  <img
+                    src="https://github.com/Yoni-Deserbaix/formation-Next.JS/blob/main/app/flavicon.png?raw=true" // Chemin vers votre image dans le dossier public
+                    alt="MyBlog Logo"
+                    width={50} // Largeur de l'image
+                  />
                   MyBlog
                 </h2>
               </Link>
