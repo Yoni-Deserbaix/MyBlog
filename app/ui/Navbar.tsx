@@ -80,7 +80,11 @@ export default function NavBar() {
                   </Link>
                 </li>
                 <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="https://www.linkedin.com/in/yoni-deserbaix/" target="_blank" onClick={() => setNavbar(!navbar)}>
+                  <Link
+                    href="https://www.linkedin.com/in/yoni-deserbaix/"
+                    target="_blank"
+                    onClick={() => setNavbar(!navbar)}
+                  >
                     {/* <!-- Linkedin --> */}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -93,8 +97,24 @@ export default function NavBar() {
                   </Link>
                 </li>
                 <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="/" onClick={() => setNavbar(!navbar)}>
-                    Links
+                  <Link
+                    href="mailto:yonideserbaix@gmail.com"
+                    onClick={() => setNavbar(!navbar)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                      />
+                    </svg>
                   </Link>
                 </li>
               </ul>
