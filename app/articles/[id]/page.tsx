@@ -55,7 +55,7 @@ export default async function App({ params }: Props) {
     <>
       <Navbar />
       <div className="mt-28"></div>
-      <div className="container card w-96 bg-base-100 shadow-xl ">
+      <div className="artboard">
         <div className="card-actions justify-start">
           <Link
             key={data.id}
@@ -78,7 +78,6 @@ export default async function App({ params }: Props) {
             </svg>
           </Link>
         </div>
-        You are on the article {params.id}
         <h1 className="titre">{data.title}</h1>
         <figure>
           <Image
@@ -86,10 +85,10 @@ export default async function App({ params }: Props) {
             width={500}
             height={500}
             alt="Article Image"
-            className="w-full object-cover"
+            className="w-full object-cover mt-10"
           />
         </figure>
-        <p> {data.content}</p>
+        <p className="mt-10"> {data.content}</p>
       </div>
     </>
   );

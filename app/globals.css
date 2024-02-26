@@ -27,3 +27,19 @@
   margin-top: 20px;
   text-align: center;
 }
+
+.artboard {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(252, 252, 252, 0.2);
+  padding: 10px 20px;
+}
+
+@media (max-width: 926px) {
+  .artboard {
+    width: 80%; /* 3/4 de la largeur sur les écrans larges */
+  }
+}
