@@ -71,7 +71,7 @@ export default async function Home() {
       </div>
 
       {/* Card for articles  */}
-      <div className="flex gap-5 flex-wrap">
+      <div className="container gap-5 flex-wrap">
         {articles.map((article: Article) => (
           <div className="card w-96 bg-base-100 shadow-xl">
             <figure>
