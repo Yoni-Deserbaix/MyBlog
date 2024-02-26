@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "./ui/Button";
 import Theme from "./ui/ThemeController";
-import ThemeController from "./ui/ThemeController";
+// import ThemeController from "./ui/ThemeController";
 import Navbar from "./ui/Navbar";
 import { Metadata } from "next";
 
@@ -55,18 +55,18 @@ export default async function Home() {
   //  console.log(articles);
 
   return (
-    <main className="h-[100%]">
+    <main className="">
       <Navbar />
 
       {/* Client side component */}
-      <div className="m-10">
-        <ThemeController />
+      <div className="m-12">
+        {/* <ThemeController /> */}
       </div>
       <Button />
       {/* Button to add a article  */}
       <div className="m-5 card-actions justify-start">
-        <Link href={"/articles/create"} className="btn btn-primary">
-          Add a article
+        <Link href={"/articles/create"} className="btn rounded-full ">
+          Ajouter un article
         </Link>
       </div>
 
@@ -95,7 +95,7 @@ export default async function Home() {
                   href={`/articles/${article.id}`}
                   className="btn rounded-full btn-outline "
                 >
-                  Visit the article
+                  Visiter l'article
                 </Link>
               </div>
             </div>

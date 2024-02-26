@@ -13,7 +13,7 @@ export default function NavBar() {
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               {/* LOGO */}
               <Link href="/">
-                <h2 className="btn btn-ghost text-xl text-2xl text-white-600 font-bold ">
+                <h2 className="btn btn-ghost  text-2xl text-white-600 font-bold ">
                   MyBlog
                 </h2>
               </Link>

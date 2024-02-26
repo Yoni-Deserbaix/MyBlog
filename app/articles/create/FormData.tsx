@@ -31,25 +31,37 @@ export default function ({}: Props) {
     });
   };
   return (
-    <div className="container ">
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <h1 className={styles.titre}>Add a artcile</h1>
-        <div className={styles.formGroup}>
-          <label htmlFor="title">Title</label>
-          <input type="text" name="title" id="title" />
-        </div>
-        <div className={styles.formGroup}>
-          <label htmlFor="content">Content</label>
-          <textarea name="content" id="content" cols={30} rows={10}></textarea>
-        </div>
-        <div className={styles.formGroup}>
-          <label htmlFor="Author">Author</label>
-          <input type="text" name="Author" id="Author" />
-        </div>
-        <div>
-          <button type="submit" className="btn btn-primary w-full">
-            Add
-          </button>
+    <div className="container justify-center items-center">
+      <form onSubmit={handleSubmit}>
+        <div className="card w-96 bg-neutral text-neutral-content">
+          <div className="card-body items-center text-center">
+            <h2 className="card-title">Ajouter un article</h2>
+            <div className={styles.formGroup}>
+              <label htmlFor="title">Title</label>
+              <input type="text" name="title" id="title" />
+            </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="content">Content</label>
+              <textarea
+                name="content"
+                id="content"
+                cols={30}
+                rows={10}
+              ></textarea>
+            </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="Author">Author</label>
+              <input type="text" name="Author" id="Author" />
+            </div>
+            <div className="card-actions justify-end">
+              <a href="/" className="btn btn-primary">
+                Retour
+              </a>
+              <button type="submit" className="btn btn-ghost">
+                Valider
+              </button>
+            </div>
+          </div>
         </div>
       </form>
     </div>
