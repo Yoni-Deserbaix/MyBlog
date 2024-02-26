@@ -33,15 +33,15 @@ export default function ({}: Props) {
   return (
     <div className="container justify-center items-center">
       <form onSubmit={handleSubmit}>
-        <div className="card w-96 bg-neutral text-neutral-content">
+        <div className="card w-96 text-neutral-content">
           <div className="card-body items-center text-center">
             <h2 className="card-title">Ajouter un article</h2>
             <div className={styles.formGroup}>
-              <label htmlFor="title">Title</label>
+              <label htmlFor="title">Titre</label>
               <input type="text" name="title" id="title" />
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="content">Content</label>
+              <label htmlFor="content">Contenu</label>
               <textarea
                 name="content"
                 id="content"
@@ -50,14 +50,14 @@ export default function ({}: Props) {
               ></textarea>
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="Author">Author</label>
+              <label htmlFor="Author">Auteur</label>
               <input type="text" name="Author" id="Author" />
             </div>
-            <div className="card-actions justify-end">
-              <a href="/" className="btn btn-primary">
+            <div className="card-actions justify-end mt-5">
+              <a href="/" className="btn btn-ghost">
                 Retour
               </a>
-              <button type="submit" className="btn btn-ghost">
+              <button type="submit" className="btn btn-primary">
                 Valider
               </button>
             </div>

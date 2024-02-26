@@ -43,9 +43,6 @@ export async function generateMetadata(
         name: article.author,
       },
     ],
-    openGraph: {
-      images: [article.linkImage, ...previousImages],
-    },
   };
 }
 
@@ -56,7 +53,11 @@ export default async function App({ params }: Props) {
   return (
     <div className="container card w-96 bg-base-100 shadow-xl">
       <div className="card-actions justify-start">
-        <Link key={data.id} href={`/`} className="btn rounded-full btn-sm btn-outline ">
+        <Link
+          key={data.id}
+          href={`/`}
+          className="btn rounded-full btn-sm btn-outline "
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
