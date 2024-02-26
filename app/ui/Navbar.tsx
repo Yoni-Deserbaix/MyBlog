@@ -13,7 +13,7 @@ export default function NavBar() {
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               {/* LOGO */}
               <Link href="/">
-                <h2 className="btn btn-ghost  text-2xl text-white-600 font-bold">
+                <h2 className="btn btn-ghost text-2xl text-white-600 font-bold pb-[50px]">
                   <img
                     src="https://github.com/Yoni-Deserbaix/formation-Next.JS/blob/main/app/flavicon.png?raw=true"
                     alt="MyBlog Logo"
