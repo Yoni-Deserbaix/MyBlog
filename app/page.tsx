@@ -5,7 +5,7 @@ import Theme from "./ui/ThemeController";
 // import ThemeController from "./ui/ThemeController";
 import Navbar from "./ui/Navbar";
 import { Metadata } from "next";
-
+import Footer from "./ui/Footer";
 export const metadata: Metadata = {
   title: "MyBlog | Home",
   description: "My blog | Home",
@@ -106,6 +106,7 @@ export default async function Home() {
           </div>
         ))}
       </div>
+      <Footer />
     </main>
   );
 }
