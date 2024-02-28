@@ -1,10 +1,7 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "./ui/Navbar";
 import Footer from "./ui/Footer";
-import { useState, useEffect } from "react";
 
 // Definition of types
 type Article = {
@@ -16,22 +13,14 @@ type Article = {
   linkImage: string;
 };
 
-const Home = () => {
-  const [articles, setArticles] = useState<Article[]>([]);
+async function getArticles() {
+  const res = await fetch("https://data-blog.onrender.com/articles");
+  const data = await res.json();
+  return data;
+}
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch(`https://data-blog.onrender.com/articles`);
-        const data = await res.json();
-        setArticles(data);
-      } catch (err) {
-        console.log("Error fetching articles", err);
-      }
-    };
-
-    fetchData();
-  }, []);
+export default async function Home() {
+  const articles: Article[] = await getArticles();
 
   return (
     <main className="">
@@ -54,9 +43,7 @@ const Home = () => {
               />
             </figure>
             <div className="card-body">
-              <h2 className="card-title">
-                {article.title}
-              </h2>
+              <h2 className="card-title">{article.title}</h2>
               <div className="flex start">{article.date}</div>
 
               <div className="card-actions justify-end">
@@ -74,6 +61,4 @@ const Home = () => {
       <Footer />
     </main>
   );
-};
-
-export default Home;
+}
