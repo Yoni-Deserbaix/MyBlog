@@ -1,9 +1,10 @@
 "use client"
+
 import Image from "next/image";
 import Link from "next/link";
-import Button from "./ui/Button";
 import Theme from "./ui/ThemeController";
 import Navbar from "./ui/Navbar";
+import Footer from "./ui/Footer";
 import { useState, useEffect } from "react";
 
 // Definition of types
@@ -40,7 +41,6 @@ const Home = () => {
       <div className="m-12">
         <Theme />
       </div>
-      <Button />
 
       <div className="flex justify-center text-2xl font-bold mt-10">
         Articles récents
@@ -76,6 +76,7 @@ const Home = () => {
           </div>
         ))}
       </div>
+      <Footer />
     </main>
   );
 };
