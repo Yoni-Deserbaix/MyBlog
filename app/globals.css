@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .container {
-  width: 70%;
+  width: 90%;
   margin: auto;
   margin-top: 2rem;
   display: flex;
