@@ -35,7 +35,7 @@ export async function POST(req: Request) {
     date: new Date(),
   };
 
-  await fetch("https://data-blog.onrender.com/articles", {
+  await fetch("http://localhost:4000/articles", {
     method: "POST",
     body: JSON.stringify(article),
     headers: {
