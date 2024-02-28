@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -47,8 +47,8 @@ const Home = () => {
             <figure>
               <Image
                 src={article.linkImage}
-                width={250}
-                height={250}
+                width={1000}
+                height={1000}
                 alt="Article Image"
                 className="w-full object-cover hover:transform hover:scale-110 transition duration-300 ease-in-out"
               />

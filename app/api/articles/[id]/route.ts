@@ -39,7 +39,7 @@ export async function PUT(req: Request, { params }: RouteParams) {
     author: author || article.author,
   };
 
-  await fetch(`http://localhost:4000/articles/${params.id}`, {
+  await fetch(`https://data-blog.onrender.com/articles/${params.id}`, {
     method: "PUT",
     body: JSON.stringify(updatedArticle),
     headers: {
