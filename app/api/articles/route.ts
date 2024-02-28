@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 const getData = async () => {
   try {
-    const res = await fetch("http://localhost:4000/articles");
+    const res = await fetch("https://data-blog.onrender.com/articles");
     const data = res.json();
     return data;
   } catch (err) {
@@ -35,7 +35,7 @@ export async function POST(req: Request) {
     date: new Date(),
   };
 
-  await fetch("http://localhost:4000/articles", {
+  await fetch("https://data-blog.onrender.com/articles", {
     method: "POST",
     body: JSON.stringify(article),
     headers: {

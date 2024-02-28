@@ -1,39 +1,10 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./ui/Button";
 import Theme from "./ui/ThemeController";
-// import ThemeController from "./ui/ThemeController";
 import Navbar from "./ui/Navbar";
-import { Metadata } from "next";
-import Footer from "./ui/Footer";
-export const metadata: Metadata = {
-  title: "MyBlog | Home",
-  description: "My blog | Home",
-};
-
-const getData = async () => {
-  try {
-    // Fetch data from local development server (db.json)
-    // const res = await fetch(`http://localhost:4000/articles`, {
-    //   // Revalidation data every 10sec
-    //   next: {
-    //     revalidate: 10,
-    //   },
-    // });
-
-    // Fetch data from the the Next.js API route
-    const res = await fetch(`http://localhost:3000/api/articles`, {
-      // Revalidation data every 10sec
-      next: {
-        revalidate: 10,
-      },
-    });
-    const data = await res.json();
-    return data;
-  } catch (err) {
-    console.log("Error fetching articles", err);
-  }
-};
+import { useState, useEffect } from "react";
 
 // Definition of types
 type Article = {
@@ -45,36 +16,39 @@ type Article = {
   linkImage: string;
 };
 
-export default async function Home() {
-  // Get data from local development server (db.json)
-  // const articles = await getData();
-  //  console.log(articles);
+const Home = () => {
+  const [articles, setArticles] = useState<Article[]>([]);
 
-  // Get data from the Next.js API route
-  const { data: articles } = await getData();
-  //  console.log(articles);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(`https://data-blog.onrender.com/articles`);
+        const data = await res.json();
+        setArticles(data);
+      } catch (err) {
+        console.log("Error fetching articles", err);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <main className="">
       <Navbar />
 
-      {/* Client side component */}
-      <div className="m-12">{/* <ThemeController /> */}</div>
+      <div className="m-12">
+        <Theme />
+      </div>
       <Button />
-      {/* Button to add a article  */}
-      {/* <div className="m-5 card-actions justify-start">
-        <Link href={"/articles/create"} className="btn rounded-full ">
-          Ajouter un article
-        </Link>
-      </div> */}
+
       <div className="flex justify-center text-2xl font-bold mt-10">
         Articles récents
       </div>
 
-      {/* Card for articles  */}
       <div className="container gap-5 flex-wrap">
         {articles.map((article: Article) => (
-          <div className="card w-96 bg-base-100 shadow-xl">
+          <div className="card w-96 bg-base-100 shadow-xl" key={article.id}>
             <figure>
               <Image
                 src={article.linkImage}
@@ -86,16 +60,12 @@ export default async function Home() {
             </figure>
             <div className="card-body">
               <h2 className="card-title">
-                {" "}
                 {article.id}. {article.title}
               </h2>
-              <div className="flex start">
-                {article.date}
-              </div>
+              <div className="flex start">{article.date}</div>
 
               <div className="card-actions justify-end">
                 <Link
-                  key={article.id}
                   href={`/articles/${article.id}`}
                   className="btn rounded-full btn-outline font-bold"
                 >
@@ -106,7 +76,8 @@ export default async function Home() {
           </div>
         ))}
       </div>
-      <Footer />
     </main>
   );
-}
+};
+
+export default Home;

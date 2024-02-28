@@ -9,7 +9,7 @@ type RouteParams = {
 
 const getOneArticle = async (id: number) => {
   try {
-    const res = await fetch(`http://localhost:4000/articles/${id}`);
+    const res = await fetch(`https://data-blog.onrender.com/articles/${id}`);
     const data = res.json();
     return data;
   } catch (err) {

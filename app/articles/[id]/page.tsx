@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ResolvingMetadata, Metadata } from "next";
 import Navbar from "../../ui/Navbar";
+import Footer from "../../ui/Footer";
 
 type Props = {
   params: {
@@ -14,7 +15,7 @@ export const revalidate = 1000;
 
 const getData = async (id: string) => {
   try {
-    const res = await fetch(`http://localhost:4000/articles/${id}`);
+    const res = await fetch(`https://data-blog.onrender.com/articles/${id}`);
     const data = await res.json();
     return data;
   } catch (err) {
@@ -90,6 +91,7 @@ export default async function App({ params }: Props) {
         </figure>
         <p className="mt-10"> {data.content}</p>
       </div>
+      <Footer />
     </>
   );
 }
