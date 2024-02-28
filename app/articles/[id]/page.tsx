@@ -15,7 +15,7 @@ export const revalidate = 1000;
 
 const getData = async (id: string) => {
   try {
-    const res = await fetch(`https://data-blog.onrender.com/articles/${id}`);
+    const res = await fetch(`http://localhost:4000/articles/${id}`);
     const data = await res.json();
     return data;
   } catch (err) {

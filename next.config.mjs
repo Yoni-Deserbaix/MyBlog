@@ -1,12 +1,8 @@
+// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "botnation.ai",
-      },
-    ],
+    domains: ['botnation.ai', 'yoni-deserbaix.github.io', 'raw.githubusercontent.com', 'encore-un-autre-domaine.com'],
   },
 };
 
