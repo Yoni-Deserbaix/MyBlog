@@ -40,6 +40,10 @@
 
 @media (max-width: 926px) {
   .artboard {
-    width: 80%; /* 3/4 de la largeur sur les écrans larges */
+    width: 95%;
+  }
+
+  span {
+    margin-left: -2rem;
   }
 }

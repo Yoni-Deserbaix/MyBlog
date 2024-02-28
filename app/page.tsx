@@ -55,7 +55,7 @@ const Home = () => {
             </figure>
             <div className="card-body">
               <h2 className="card-title">
-                {article.id}. {article.title}
+                {article.title}
               </h2>
               <div className="flex start">{article.date}</div>
 

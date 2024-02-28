@@ -80,16 +80,27 @@ export default async function App({ params }: Props) {
           </Link>
         </div>
         <h1 className="titre">{data.title}</h1>
+        <p className="text-sm text-center font-medium">
+          {" "}
+          {data.date} - {data.author}
+        </p>
         <figure>
           <Image
-            src={data.linkImage}
-            width={500}
-            height={500}
+            src={data.idLinkImage || data.linkImage}
+            width={1000}
+            height={1000}
             alt="Article Image"
-            className="w-full object-cover mt-10"
+            className="w-3/4 mt-5 m-auto"
           />
         </figure>
-        <p className="mt-10"> {data.content}</p>
+        <p className="my-10 w-3/4 m-auto font-medium">
+          {data.content.split("\n").map((line: string, index: number) => (
+            <span key={index} className="m-[-2rem]">
+              {line}
+              <br />
+            </span>
+          ))}
+        </p>{" "}
       </div>
       <Footer />
     </>
