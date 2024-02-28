@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import Theme from "./ui/ThemeController";
 import Navbar from "./ui/Navbar";
 import Footer from "./ui/Footer";
 import { useState, useEffect } from "react";
@@ -38,11 +37,7 @@ const Home = () => {
     <main className="">
       <Navbar />
 
-      <div className="m-12">
-        <Theme />
-      </div>
-
-      <div className="flex justify-center text-2xl font-bold mt-10">
+      <div className="flex justify-center text-2xl font-bold mt-28">
         Articles récents
       </div>
 
