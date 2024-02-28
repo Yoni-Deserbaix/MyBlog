@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "MyBlog",
-  description: "MyBlog",
+  title: "Yoni - MyBlog",
+  description: "Yoni - MyBlog",
   icons: {
     icon: [
       "https://github.com/Yoni-Deserbaix/formation-Next.JS/blob/main/app/flavicon.png?raw=true",
