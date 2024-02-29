@@ -14,9 +14,18 @@ type Article = {
 };
 
 async function getArticles() {
-  const res = await fetch("https://data-blog.onrender.com/articles");
-  const data = await res.json();
-  return data;
+  try {
+    const res = await fetch("https://data-blog.onrender.com/articles", {
+      // Revalidation data every 10 seconds
+      next: {
+        revalidate: 10,
+      },
+    });
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching articles:", error);
+  }
 }
 
 export default async function Home() {
