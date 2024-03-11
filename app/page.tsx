@@ -32,7 +32,7 @@ export default async function Home() {
   const articles: Article[] = await getArticles();
 
   return (
-    <main className="">
+    <main>
       <Navbar />
 
       <div className="flex justify-center text-2xl font-bold mt-28">
