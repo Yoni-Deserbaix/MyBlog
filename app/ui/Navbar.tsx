@@ -77,7 +77,7 @@ export default function NavBar() {
                 </li>
                 <li className="btn btn-ghost mb-3 pb-6 text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0  font-semibold grid">
                   <Link
-                    href="https://yoni-deserbaix.github.io/Portfolio/"
+                    href="https://yoni-deserbaix-potfolio.vercel.app/"
                     target="_blank"
                     onClick={() => setNavbar(!navbar)}
                   >
