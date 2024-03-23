@@ -26,6 +26,7 @@ export default function NavBar() {
                   <Button
                     variant="link"
                     className="text-2xl font-bold"
+                    aria-label="Navigate to the home page"
                   >
                     <Image
                       src="https://github.com/Yoni-Deserbaix/formation-Next.JS/blob/main/app/flavicon.png?raw=true"
@@ -108,7 +109,10 @@ export default function NavBar() {
                     target="_blank"
                   >
                     {/* <!-- Github -->  */}
-                    <Button variant="ghost">
+                    <Button
+                      variant="ghost"
+                      aria-label="Navigate to the Github account"
+                    >
                       <Github />
                     </Button>
                   </Link>
@@ -119,7 +123,10 @@ export default function NavBar() {
                     target="_blank"
                   >
                     {/* <!-- Linkedin --> */}
-                    <Button variant="ghost">
+                    <Button
+                      variant="ghost"
+                      aria-label="Navigate to the LinkedIn account"
+                    >
                       <Linkedin />
                     </Button>
                   </Link>
@@ -127,7 +134,7 @@ export default function NavBar() {
                 <li>
                   <Link href="mailto:yonideserbaix@gmail.com">
                     {/* Mail  */}
-                    <Button variant="ghost">
+                    <Button variant="ghost" aria-label="email">
                       <Mail />
                     </Button>
                   </Link>
