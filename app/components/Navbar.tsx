@@ -16,7 +16,7 @@ import {
 export default function NavBar() {
   return (
     <div>
-      <nav className="w-full fixed top-0 left-0 right-0 bg-background">
+      <nav className="w-full fixed top-0 left-0 right-0 bg-background z-10">
         <div className="justify-between px-4 mx-auto max-w-7xl items-center flex">
           <div>
             <div className="flex justify-between py-5 md:py-5 md:block">
