@@ -5,7 +5,7 @@ import { ResolvingMetadata, Metadata } from "next";
 import Navbar from "../../ui/Navbar";
 import Footer from "../../ui/Footer";
 
-type Props = {
+type ArticleType = {
   params: {
     id: string;
   };
@@ -25,7 +25,7 @@ const getData = async (id: string) => {
 
 // Dynamic Metadata
 export async function generateMetadata(
-  { params }: Props,
+  { params }: ArticleType,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
@@ -49,7 +49,7 @@ export async function generateMetadata(
 }
 
 // [] = route dynamique
-export default async function App({ params }: Props) {
+export default async function App({ params }: ArticleType) {
   const data = await getData(params.id);
   // console.log(data);
   return (
@@ -100,7 +100,7 @@ export default async function App({ params }: Props) {
               <br />
             </span>
           ))}
-        </p>{" "}
+        </p>
       </div>
       <Footer />
     </>

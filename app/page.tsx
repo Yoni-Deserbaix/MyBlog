@@ -4,7 +4,7 @@ import Navbar from "./ui/Navbar";
 import Footer from "./ui/Footer";
 
 // Definition of types
-type Article = {
+type ArticleType = {
   id: number;
   title: string;
   author: string;
@@ -29,7 +29,7 @@ async function getArticles() {
 }
 
 export default async function Home() {
-  const articles: Article[] = await getArticles();
+  const articles: ArticleType[] = await getArticles();
 
   return (
     <main>
@@ -40,7 +40,7 @@ export default async function Home() {
       </div>
 
       <div className="container gap-5 flex-wrap">
-        {articles.map((article: Article) => (
+        {articles.map((article: ArticleType) => (
           <div className="card w-96 bg-base-100 shadow-xl" key={article.id}>
             <figure>
               <Image

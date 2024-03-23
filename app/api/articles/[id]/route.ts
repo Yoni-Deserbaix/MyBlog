@@ -1,7 +1,7 @@
 import { error } from "console";
 import { NextResponse } from "next/server";
 
-type RouteParams = {
+type RouteType = {
   params: {
     id: number;
   };
@@ -18,7 +18,7 @@ const getOneArticle = async (id: number) => {
 };
 
 // GET
-export async function GET(req: Request, { params }: RouteParams) {
+export async function GET(req: Request, { params }: RouteType) {
   const data = await getOneArticle(params.id);
   return NextResponse.json({
     message: "Data received successfully from Next.js API",
@@ -27,7 +27,7 @@ export async function GET(req: Request, { params }: RouteParams) {
 }
 
 // PUT
-export async function PUT(req: Request, { params }: RouteParams) {
+export async function PUT(req: Request, { params }: RouteType) {
   const { title, content, author } = await req.json();
 
   const article = await getOneArticle(params.id);
@@ -54,7 +54,7 @@ export async function PUT(req: Request, { params }: RouteParams) {
 }
 
 // DELETE
-export async function DELETE(req: Request, { params }: RouteParams) {
+export async function DELETE(req: Request, { params }: RouteType) {
   await fetch(`http://localhost:4000/articles/${params.id}`, {
     method: "DELETE",
   });
