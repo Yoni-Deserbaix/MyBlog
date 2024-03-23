@@ -1,24 +1,32 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { ThemeToggle } from "../theme/ThemeToggle";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarTrigger,
+} from "@/components/ui/menubar";
 
 export default function NavBar() {
   return (
     <div>
-      <nav className="w-full fixed top-0 left-0 right-0 z-10 ">
+      <nav className="w-full fixed top-0 left-0 right-0 ">
         <div className="justify-between px-4 mx-auto max-w-7xl items-center flex">
           <div>
-            <div className="flex  justify-between py-3 md:py-5 md:block">
+            <div className="flex  justify-betwen py-3 md:py-5 md:block">
               {/* LOGO */}
               <Link href="/">
                 <h2>
                   <Button
                     variant="ghost"
                     size="lg"
-                    className="text-xl  font-bold"
+                    className="text-2xl font-bold"
                   >
                     <Image
                       src="https://github.com/Yoni-Deserbaix/formation-Next.JS/blob/main/app/flavicon.png?raw=true"
@@ -34,8 +42,50 @@ export default function NavBar() {
             </div>
           </div>
           <div>
-            <div>
-              <ul className="h-screen md:h-auto items-center justify-center md:flex">
+            <Menubar className="hidden max-sm:block">
+              <MenubarMenu>
+                <MenubarTrigger>Menu </MenubarTrigger>
+                <MenubarContent>
+                  <MenubarItem>
+                    <Link href="/">Blog</Link>
+                  </MenubarItem>
+                  <MenubarSeparator />
+                  <MenubarItem>
+                    <Link
+                      href="https://yoni-deserbaix-potfolio.vercel.app/"
+                      target="_blank"
+                    >
+                      Portfolio
+                    </Link>
+                  </MenubarItem>
+                  <MenubarSeparator />
+                  <MenubarItem>
+                    <Link
+                      href="https://github.com/Yoni-Deserbaix"
+                      target="_blank"
+                    >
+                      Github{" "}
+                    </Link>
+                  </MenubarItem>
+                  <MenubarSeparator />
+                  <MenubarItem>
+                    <Link
+                      href="https://www.linkedin.com/in/yoni-deserbaix/"
+                      target="_blank"
+                    >
+                      Linkedin
+                    </Link>
+                  </MenubarItem>
+                  <MenubarSeparator />
+                  <MenubarItem>
+                    <Link href="mailto:yonideserbaix@gmail.com">Mail</Link>
+                  </MenubarItem>
+                </MenubarContent>
+              </MenubarMenu>
+            </Menubar>
+
+            <div className="block max-sm:hidden">
+              <ul className="items-center justify-center flex">
                 <li>
                   <Link href="/">
                     <Button variant="ghost" className="text-lg font-semibold">
@@ -83,12 +133,10 @@ export default function NavBar() {
                     </Button>
                   </Link>
                 </li>
-                <li className="pl-10">
-                  <ThemeToggle />
-                </li>
               </ul>
             </div>
           </div>
+          <ThemeToggle />
         </div>
       </nav>
     </div>

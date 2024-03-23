@@ -64,7 +64,7 @@ export default async function App({ params }: ArticleType) {
     <>
       <Navbar />
       <div className="mt-28 flex justify-center items-center gap-10 flex-col"></div>
-      <CardTitle className="text-center text-3xl font-bold">
+      <CardTitle className="text-center text-3xl font-bold max-sm:text-2xl">
         {data.title}
       </CardTitle>
       <CardDescription className="text-center">

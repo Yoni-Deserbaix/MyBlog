@@ -45,7 +45,7 @@ export default async function Home() {
     <main>
       <Navbar />
 
-      <div className="flex justify-center text-2xl font-bold mt-28">
+      <div className="flex justify-center text-3xl font-bold mt-28 max-sm:text-2xl">
         Articles récents
       </div>
 
