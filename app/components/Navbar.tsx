@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export default function NavBar() {
   return (
     <div>
-      <nav className="w-full fixed top-0 left-0 right-0 z-10">
+      <nav className="w-full fixed top-0 left-0 right-0 z-10 bg-background">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex  justify-between py-3 md:py-5 md:block">

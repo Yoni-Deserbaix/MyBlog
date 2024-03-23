@@ -4,6 +4,15 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Button } from "@/components/ui/button";
 
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
 // Definition of types
 type ArticleType = {
   id: number;
@@ -43,28 +52,29 @@ export default async function Home() {
       <div className="container gap-5 flex-wrap">
         {articles.map((article: ArticleType) => (
           <div className="card w-96 bg-base-100 shadow-xl" key={article.id}>
-            <figure>
-              <Image
-                src={article.linkImage}
-                width={1000}
-                height={1000}
-                alt="Article Image"
-                className="w-full object-cover hover:transform hover:scale-110 transition duration-300 ease-in-out"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{article.title}</h2>
-              <div className="flex start">{article.date}</div>
-
-              <div className="card-actions justify-end">
+            <Card>
+              <CardHeader>
+                <figure>
+                  <Image
+                    src={article.linkImage}
+                    width={1000}
+                    height={1000}
+                    alt="Article Image"
+                    className="w-full object-cover hover:transform hover:scale-110 transition duration-300 ease-in-out"
+                  />
+                </figure>
+                <CardTitle>{article.title}</CardTitle>
+                <CardDescription>{article.date}</CardDescription>
+              </CardHeader>
+              <CardFooter>
                 <Link
                   href={`/articles/${article.id}`}
                   className="btn rounded-full btn-outline font-bold"
                 >
                   Visiter l'article
                 </Link>
-              </div>
-            </div>
+              </CardFooter>
+            </Card>
           </div>
         ))}
       </div>
