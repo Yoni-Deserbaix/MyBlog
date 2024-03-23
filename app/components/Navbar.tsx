@@ -19,13 +19,12 @@ export default function NavBar() {
       <nav className="w-full fixed top-0 left-0 right-0 bg-background">
         <div className="justify-between px-4 mx-auto max-w-7xl items-center flex">
           <div>
-            <div className="flex justify-between py-3 md:py-5 md:block">
+            <div className="flex justify-between py-5 md:py-5 md:block">
               {/* LOGO */}
               <Link href="/">
-                <h2>
+                <h2 className="translate-y-1">
                   <Button
-                    variant="ghost"
-                    size="lg"
+                    variant="link"
                     className="text-2xl font-bold"
                   >
                     <Image
