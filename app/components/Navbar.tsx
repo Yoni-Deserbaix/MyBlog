@@ -16,10 +16,10 @@ import {
 export default function NavBar() {
   return (
     <div>
-      <nav className="w-full fixed top-0 left-0 right-0 ">
+      <nav className="w-full fixed top-0 left-0 right-0 bg-background">
         <div className="justify-between px-4 mx-auto max-w-7xl items-center flex">
           <div>
-            <div className="flex  justify-betwen py-3 md:py-5 md:block">
+            <div className="flex justify-between py-3 md:py-5 md:block">
               {/* LOGO */}
               <Link href="/">
                 <h2>
