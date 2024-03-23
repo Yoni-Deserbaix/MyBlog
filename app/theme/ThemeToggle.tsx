@@ -10,6 +10,7 @@ export const ThemeToggle = () => {
     <div>
       <Button
         variant="ghost"
+        aria-label="toggle theme"
         onClick={() => {
           setTheme(theme === "light" ? "dark" : "light");
         }}
