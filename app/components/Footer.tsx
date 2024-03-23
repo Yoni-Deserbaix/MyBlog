@@ -1,13 +1,10 @@
-import * as React from 'react';
+import React from "react";
 
-export interface IAppProps {
-}
-
-export default function App (props: IAppProps) {
+export default function App() {
   return (
     <div>
-      <footer className='m-10 text-center text-xs'>
-        &copy; 2024 Yoni Deserbaix - All rights reserved.
+      <footer className="mt-28  m-4 text-center text-xs text-muted-foreground">
+        &copy; {new Date().getFullYear()} Yoni Deserbaix
       </footer>
     </div>
   );

@@ -51,14 +51,17 @@ export default async function Home() {
 
       <div className="flex items-center gap-10 flex-col pt-14">
         {articles.map((article: ArticleType) => (
-          <div className="card w-1/3 bg-base-100 shadow-xl" key={article.id}>
+          <div
+            className="card w-1/3 bg-base-100 shadow-xl max-lg:w-1/2 max-md:w-2/3 max-sm:w-11/12"
+            key={article.id}
+          >
             <Card>
               <CardHeader>
                 <figure>
                   <Image
                     src={article.linkImage}
-                    width={1000}
-                    height={1000}
+                    width={2000}
+                    height={2000}
                     alt="Article Image"
                     className="w-full  hover:opacity-60 transition duration-300 rounded-xl"
                   />

@@ -8,8 +8,8 @@ import { Button } from "@/components/ui/button";
 export default function NavBar() {
   return (
     <div>
-      <nav className="w-full fixed top-0 left-0 right-0 z-10 bg-background">
-        <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+      <nav className="w-full fixed top-0 left-0 right-0 z-10 ">
+        <div className="justify-between px-4 mx-auto max-w-7xl items-center flex">
           <div>
             <div className="flex  justify-between py-3 md:py-5 md:block">
               {/* LOGO */}
@@ -35,7 +35,7 @@ export default function NavBar() {
           </div>
           <div>
             <div>
-              <ul className="h-screen md:h-auto items-center justify-center md:flex ">
+              <ul className="h-screen md:h-auto items-center justify-center md:flex">
                 <li>
                   <Link href="/">
                     <Button variant="ghost" className="text-lg font-semibold">
@@ -47,7 +47,6 @@ export default function NavBar() {
                   <Link
                     href="https://yoni-deserbaix-potfolio.vercel.app/"
                     target="_blank"
-                   
                   >
                     <Button variant="ghost" className="text-lg font-semibold">
                       Portfolio
@@ -58,7 +57,6 @@ export default function NavBar() {
                   <Link
                     href="https://github.com/Yoni-Deserbaix"
                     target="_blank"
-                   
                   >
                     {/* <!-- Github -->  */}
                     <Button variant="ghost">
@@ -70,7 +68,6 @@ export default function NavBar() {
                   <Link
                     href="https://www.linkedin.com/in/yoni-deserbaix/"
                     target="_blank"
-                   
                   >
                     {/* <!-- Linkedin --> */}
                     <Button variant="ghost">
@@ -79,10 +76,7 @@ export default function NavBar() {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="mailto:yonideserbaix@gmail.com"
-                   
-                  >
+                  <Link href="mailto:yonideserbaix@gmail.com">
                     {/* Mail  */}
                     <Button variant="ghost">
                       <Mail />
