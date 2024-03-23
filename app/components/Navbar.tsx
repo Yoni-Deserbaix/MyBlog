@@ -2,18 +2,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { ThemeToggle } from "../theme/ThemeToggle";
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
   return (
     <div>
-      <nav className="w-full bg-black fixed top-0 left-0 right-0 z-10">
+      <nav className="w-full fixed top-0 left-0 right-0 z-10">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               {/* LOGO */}
               <Link href="/">
-                <h2 className="btn btn-ghost text-2xl text-white-600 font-bold pb-[50px]">
+                <h2 className="btn btn-ghost text-2xl  font-bold pb-[50px]">
                   <img
                     src="https://github.com/Yoni-Deserbaix/formation-Next.JS/blob/main/app/flavicon.png?raw=true"
                     alt="MyBlog Logo"
@@ -70,12 +71,12 @@ export default function NavBar() {
               }`}
             >
               <ul className="h-screen md:h-auto items-center justify-center md:flex ">
-                <li className="btn btn-ghost mb-3 pb-6 text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0  font-semibold grid">
+                <li className="btn btn-ghost mb-3 pb-6 text-xl  py-2 md:px-6 text-center border-b-2 md:border-b-0  font-semibold grid">
                   <Link href="/" onClick={() => setNavbar(!navbar)}>
                     Blog
                   </Link>
                 </li>
-                <li className="btn btn-ghost mb-3 pb-6 text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0  font-semibold grid">
+                <li className="btn btn-ghost mb-3 pb-6 text-xl  py-2 md:px-6 text-center border-b-2 md:border-b-0  font-semibold grid">
                   <Link
                     href="https://yoni-deserbaix-potfolio.vercel.app/"
                     target="_blank"
@@ -84,7 +85,7 @@ export default function NavBar() {
                     Portfolio
                   </Link>
                 </li>
-                <li className="btn btn-ghost mb-3 text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0  font-semibold grid">
+                <li className="btn btn-ghost mb-3 text-xl  py-2 md:px-6 text-center border-b-2 md:border-b-0  font-semibold grid">
                   <Link
                     href="https://github.com/Yoni-Deserbaix"
                     target="_blank"
@@ -101,7 +102,7 @@ export default function NavBar() {
                     </svg>
                   </Link>
                 </li>
-                <li className="btn btn-ghost mb-3  text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0  font-semibold grid">
+                <li className="btn btn-ghost mb-3  text-xl  py-2 md:px-6 text-center border-b-2 md:border-b-0  font-semibold grid">
                   <Link
                     href="https://www.linkedin.com/in/yoni-deserbaix/"
                     target="_blank"
@@ -118,7 +119,7 @@ export default function NavBar() {
                     </svg>
                   </Link>
                 </li>
-                <li className="btn btn-ghost mb-3  text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0  font-semibold grid">
+                <li className="btn btn-ghost mb-3  text-xl  py-2 md:px-6 text-center border-b-2 md:border-b-0  font-semibold grid">
                   <Link
                     href="mailto:yonideserbaix@gmail.com"
                     onClick={() => setNavbar(!navbar)}
@@ -140,6 +141,7 @@ export default function NavBar() {
                     </svg>
                   </Link>
                 </li>
+                  <ThemeToggle />
               </ul>
             </div>
           </div>
