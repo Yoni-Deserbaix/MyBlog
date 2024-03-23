@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "./ui/Navbar";
-import Footer from "./ui/Footer";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 // Definition of types
 type ArticleType = {

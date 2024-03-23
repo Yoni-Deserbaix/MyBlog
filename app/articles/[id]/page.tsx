@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ResolvingMetadata, Metadata } from "next";
-import Navbar from "../../ui/Navbar";
-import Footer from "../../ui/Footer";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 type ArticleType = {
   params: {
