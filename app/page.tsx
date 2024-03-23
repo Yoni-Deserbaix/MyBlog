@@ -49,9 +49,9 @@ export default async function Home() {
         Articles récents
       </div>
 
-      <div className="container gap-5 flex-wrap">
+      <div className="flex items-center gap-10 flex-col pt-14">
         {articles.map((article: ArticleType) => (
-          <div className="card w-96 bg-base-100 shadow-xl" key={article.id}>
+          <div className="card w-1/3 bg-base-100 shadow-xl" key={article.id}>
             <Card>
               <CardHeader>
                 <figure>
@@ -60,18 +60,21 @@ export default async function Home() {
                     width={1000}
                     height={1000}
                     alt="Article Image"
-                    className="w-full object-cover hover:transform hover:scale-110 transition duration-300 ease-in-out"
+                    className="w-full  hover:opacity-60 transition duration-300 rounded-xl"
                   />
                 </figure>
-                <CardTitle>{article.title}</CardTitle>
+                <CardTitle className="text-xl pt-4">{article.title}</CardTitle>
                 <CardDescription>{article.date}</CardDescription>
               </CardHeader>
-              <CardFooter>
-                <Link
-                  href={`/articles/${article.id}`}
-                  className="btn rounded-full btn-outline font-bold"
-                >
-                  Visiter l'article
+              <CardFooter className="flex justify-end">
+                <Link href={`/articles/${article.id}`}>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="rounded-xl text-lg"
+                  >
+                    Visiter l'article
+                  </Button>
                 </Link>
               </CardFooter>
             </Card>
