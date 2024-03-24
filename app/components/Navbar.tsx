@@ -23,7 +23,7 @@ export default function NavBar() {
               <Menubar className="hidden max-sm:block my-[0.3rem]">
                 <MenubarMenu>
                   <MenubarTrigger>
-                    <MenuIcon />{" "}
+                    <MenuIcon />
                   </MenubarTrigger>
                   <MenubarContent>
                     <MenubarItem>
@@ -64,7 +64,7 @@ export default function NavBar() {
                 </MenubarMenu>
               </Menubar>
               {/* LOGO */}
-              <div className="flex translate-y-2 pl-4 underline underline-offset-8 decoration-green-500 -rotate-2">
+              <div className="flex translate-y-2 pl-4 underline underline-offset-8 decoration-green-500 -rotate-2 hover:text-green-400 transition-all">
                 <Link href="/">
                   <Image
                     src="https://github.com/Yoni-Deserbaix/formation-Next.JS/blob/main/app/flavicon.png?raw=true"
@@ -90,7 +90,7 @@ export default function NavBar() {
               <ul className="items-center justify-center flex">
                 <li>
                   <Link href="/">
-                    <Button variant="ghost" className="text-lg font-semibold">
+                    <Button className="text-lg font-semibold hover:text-green-400 transition-all">
                       Blog
                     </Button>
                   </Link>
@@ -100,7 +100,7 @@ export default function NavBar() {
                     href="https://yoni-deserbaix-potfolio.vercel.app/"
                     target="_blank"
                   >
-                    <Button variant="ghost" className="text-lg font-semibold">
+                    <Button className="text-lg font-semibold hover:text-green-400 transition-all">
                       Portfolio
                     </Button>
                   </Link>
@@ -112,8 +112,8 @@ export default function NavBar() {
                   >
                     {/* <!-- Github -->  */}
                     <Button
-                      variant="ghost"
                       aria-label="Navigate to the Github account"
+                      className="hover:text-green-400 transition-all"
                     >
                       <Github />
                     </Button>
@@ -126,8 +126,8 @@ export default function NavBar() {
                   >
                     {/* <!-- Linkedin --> */}
                     <Button
-                      variant="ghost"
                       aria-label="Navigate to the LinkedIn account"
+                      className="hover:text-green-400 transition-all"
                     >
                       <Linkedin />
                     </Button>
@@ -136,7 +136,10 @@ export default function NavBar() {
                 <li>
                   <Link href="mailto:yonideserbaix@gmail.com">
                     {/* Mail  */}
-                    <Button variant="ghost" aria-label="email">
+                    <Button
+                      aria-label="email"
+                      className="hover:text-green-400 transition-all"
+                    >
                       <Mail />
                     </Button>
                   </Link>
