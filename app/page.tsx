@@ -31,9 +31,6 @@ async function getArticles() {
       },
     });
 
-    // delay response
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
     const data = await res.json();
     return data;
   } catch (error) {
@@ -55,7 +52,7 @@ export default async function Home() {
       <div className="flex items-center gap-10 flex-col pt-14">
         {articles.map((article: ArticleType) => (
           <div
-            className="card w-1/3 bg-base-100 shadow-xl max-lg:w-1/2 max-md:w-2/3 max-sm:w-11/12"
+            className="card w-1/3 bg-base-100 shadow-xl max-xl:w-2/4 max-lg:w-3/4 max-md:w-2/3 max-sm:w-11/12"
             key={article.id}
           >
             <Card>

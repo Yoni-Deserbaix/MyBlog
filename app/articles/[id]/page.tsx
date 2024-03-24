@@ -70,7 +70,7 @@ export default async function App({ params }: ArticleType) {
       <CardDescription className="text-center">
         {data.date} - {data.author}
       </CardDescription>
-      <Card className="flex flex-col m-auto mt-14 w-1/3 bg-base-100 shadow-xl max-lg:w-1/2 max-md:w-2/3 max-sm:w-11/12 out">
+      <Card className="flex flex-col m-auto mt-14 bg-base-100 shadow-xl w-1/3 bg-base-100 max-xl:w-2/4 max-lg:w-3/4 max-md:w-2/3 max-sm:w-11/12">
         <CardHeader>
           <figure>
             <Image
