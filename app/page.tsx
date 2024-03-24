@@ -68,12 +68,14 @@ export default async function Home() {
                     className="w-full rounded-xl"
                   />
                 </figure>
-                <CardTitle className="text-xl pt-4">
-                  <Title
-                    text={article.title}
-                    className="m-3 justify-center text-md" 
-                  />
-                </CardTitle>
+                <Link href={`/articles/${article.id}`}>
+                  <CardTitle className="text-xl pt-4">
+                    <Title
+                      text={article.title}
+                      className="m-3 justify-center text-md"
+                    />
+                  </CardTitle>
+                </Link>
                 <CardDescription>{article.date}</CardDescription>
               </CardHeader>
               <CardFooter className="flex justify-end">
