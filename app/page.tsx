@@ -3,8 +3,6 @@ import Link from "next/link";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton"
-
 import {
   Card,
   CardContent,
@@ -32,6 +30,10 @@ async function getArticles() {
         revalidate: 10,
       },
     });
+
+    // delay response
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
     const data = await res.json();
     return data;
   } catch (error) {
