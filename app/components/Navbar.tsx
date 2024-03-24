@@ -64,24 +64,25 @@ export default function NavBar() {
                 </MenubarMenu>
               </Menubar>
               {/* LOGO */}
-              <Link href="/">
-                <h2 className="translate-y-1">
-                  <Button
-                    variant="link"
-                    className="text-2xl font-bold"
+              <div className="flex translate-y-2 pl-4 underline underline-offset-8 decoration-green-500 -rotate-2">
+                <Link href="/">
+                  <Image
+                    src="https://github.com/Yoni-Deserbaix/formation-Next.JS/blob/main/app/flavicon.png?raw=true"
+                    alt="MyBlog Logo"
+                    width={200}
+                    height={200}
+                    className="w-12 -translate-y-2 hover:scale-110 transition-all"
+                  />
+                </Link>
+                <Link href="/">
+                  <div
+                    className="text-2xl font-bold flex"
                     aria-label="Navigate to the home page"
                   >
-                    <Image
-                      src="https://github.com/Yoni-Deserbaix/formation-Next.JS/blob/main/app/flavicon.png?raw=true"
-                      alt="MyBlog Logo"
-                      width={200}
-                      height={200}
-                      className="w-12"
-                    />
                     MyBlog
-                  </Button>
-                </h2>
-              </Link>
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
           <div>
