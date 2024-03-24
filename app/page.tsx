@@ -11,6 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Title from "./components/Title";
 
 // Definition of types
 type ArticleType = {
@@ -45,14 +46,15 @@ export default async function Home() {
     <main>
       <Navbar />
 
-      <div className="flex justify-center text-3xl font-bold mt-28 max-sm:text-2xl">
-        Articles récents
-      </div>
+      <Title
+        text="Artciles récents"
+        className="flex flex-col mt-28 items-center justify-center text-3xl -rotate-3"
+      />
 
       <div className="flex items-center gap-10 flex-col pt-14">
-        {articles.map((article: ArticleType) => (
+        {articles.map((article: ArticleType, index: number) => (
           <div
-            className="card w-1/3 bg-base-100 shadow-xl max-xl:w-2/4 max-lg:w-3/4 max-md:w-2/3 max-sm:w-11/12"
+            className="card w-1/3 bg-base-100 shadow-xl max-lg:w-1/2 max-md:w-2/3 max-sm:w-11/12"
             key={article.id}
           >
             <Card>
@@ -66,7 +68,12 @@ export default async function Home() {
                     className="w-full rounded-xl"
                   />
                 </figure>
-                <CardTitle className="text-xl pt-4">{article.title}</CardTitle>
+                <CardTitle className="text-xl pt-4">
+                  <Title
+                    text={article.title}
+                    className="m-3 justify-center text-md" 
+                  />
+                </CardTitle>
                 <CardDescription>{article.date}</CardDescription>
               </CardHeader>
               <CardFooter className="flex justify-end">

@@ -12,6 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Title from "@/app/components/Title";
 
 type ArticleType = {
   params: {
@@ -65,7 +66,10 @@ export default async function App({ params }: ArticleType) {
       <Navbar />
       <div className="mt-28 flex justify-center items-center gap-10 flex-col"></div>
       <CardTitle className="text-center text-3xl font-bold max-sm:text-2xl">
-        {data.title}
+        <Title
+          text={data.title}
+          className="m-3 flex flex-col mt-28 items-center justify-center text-3xl"
+        />
       </CardTitle>
       <CardDescription className="text-center">
         {data.date} - {data.author}
