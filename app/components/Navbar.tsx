@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ThemeToggle } from "../theme/ThemeToggle";
-import { Github, Linkedin, Mail, Menu } from "lucide-react";
+import { Github, Linkedin, Mail, Menu, MenuIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Menubar,
@@ -20,6 +20,49 @@ export default function NavBar() {
         <div className="justify-between px-4 mx-auto max-w-7xl items-center flex">
           <div>
             <div className="flex justify-between py-5 md:py-5 md:block">
+              <Menubar className="hidden max-sm:block my-[0.3rem]">
+                <MenubarMenu>
+                  <MenubarTrigger>
+                    <MenuIcon />{" "}
+                  </MenubarTrigger>
+                  <MenubarContent>
+                    <MenubarItem>
+                      <Link href="/">Blog</Link>
+                    </MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem>
+                      <Link
+                        href="https://yoni-deserbaix-potfolio.vercel.app/"
+                        target="_blank"
+                      >
+                        Portfolio
+                      </Link>
+                    </MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem>
+                      <Link
+                        href="https://github.com/Yoni-Deserbaix"
+                        target="_blank"
+                      >
+                        Github{" "}
+                      </Link>
+                    </MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem>
+                      <Link
+                        href="https://www.linkedin.com/in/yoni-deserbaix/"
+                        target="_blank"
+                      >
+                        Linkedin
+                      </Link>
+                    </MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem>
+                      <Link href="mailto:yonideserbaix@gmail.com">Mail</Link>
+                    </MenubarItem>
+                  </MenubarContent>
+                </MenubarMenu>
+              </Menubar>
               {/* LOGO */}
               <Link href="/">
                 <h2 className="translate-y-1">
@@ -42,48 +85,6 @@ export default function NavBar() {
             </div>
           </div>
           <div>
-            <Menubar className="hidden max-sm:block">
-              <MenubarMenu>
-                <MenubarTrigger>Menu </MenubarTrigger>
-                <MenubarContent>
-                  <MenubarItem>
-                    <Link href="/">Blog</Link>
-                  </MenubarItem>
-                  <MenubarSeparator />
-                  <MenubarItem>
-                    <Link
-                      href="https://yoni-deserbaix-potfolio.vercel.app/"
-                      target="_blank"
-                    >
-                      Portfolio
-                    </Link>
-                  </MenubarItem>
-                  <MenubarSeparator />
-                  <MenubarItem>
-                    <Link
-                      href="https://github.com/Yoni-Deserbaix"
-                      target="_blank"
-                    >
-                      Github{" "}
-                    </Link>
-                  </MenubarItem>
-                  <MenubarSeparator />
-                  <MenubarItem>
-                    <Link
-                      href="https://www.linkedin.com/in/yoni-deserbaix/"
-                      target="_blank"
-                    >
-                      Linkedin
-                    </Link>
-                  </MenubarItem>
-                  <MenubarSeparator />
-                  <MenubarItem>
-                    <Link href="mailto:yonideserbaix@gmail.com">Mail</Link>
-                  </MenubarItem>
-                </MenubarContent>
-              </MenubarMenu>
-            </Menubar>
-
             <div className="block max-sm:hidden">
               <ul className="items-center justify-center flex">
                 <li>
