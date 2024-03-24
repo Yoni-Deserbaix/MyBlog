@@ -83,9 +83,9 @@ export default async function App({ params }: ArticleType) {
           </figure>
         </CardHeader>
         <CardFooter>
-          <p className="my-10 w-10/12 m-auto font-medium text-lg">
+          <p className="my-10 w-full m-auto font-medium text-lg">
             {data.content.split("\n").map((line: string, index: number) => (
-              <span key={index} className="m-[-2rem]">
+              <span key={index}>
                 {line}
                 <br />
               </span>
