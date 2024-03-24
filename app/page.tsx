@@ -63,7 +63,7 @@ export default async function Home() {
                     width={2000}
                     height={2000}
                     alt="Article Image"
-                    className="w-full  hover:opacity-60 transition duration-300 rounded-xl"
+                    className="w-full rounded-xl"
                   />
                 </figure>
                 <CardTitle className="text-xl pt-4">{article.title}</CardTitle>
