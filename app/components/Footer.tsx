@@ -12,10 +12,15 @@ export default function App() {
         <Link
           href="https://www.linkedin.com/in/yoni-deserbaix/"
           target="_blank"
+          aria-label="Navigate to the LinkedIn account"
         >
           <Linkedin size={20} />
         </Link>
-        <Link href="https://github.com/Yoni-Deserbaix" target="_blank">
+        <Link
+          href="https://github.com/Yoni-Deserbaix"
+          target="_blank"
+          aria-label="Navigate to the Github account"
+        >
           <Github size={20} />
         </Link>
       </div>
