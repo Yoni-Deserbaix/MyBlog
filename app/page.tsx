@@ -12,6 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Title from "./components/Title";
+import Glow from "./components/Glow";
 
 // Definition of types
 type ArticleType = {
@@ -52,7 +53,10 @@ export default async function Home() {
       />
 
       <div className="flex items-center gap-10 flex-col pt-14">
-      <div className="glow -left-32 mt-16 max-md:-left-48"></div>
+        <Glow
+          className="absolute z-10 w-0 h-0 bg-white shadow-glow rounded-full -left-32 max-sm:-left-48"
+          style={{ boxShadow: "0 0 200px 130px #22c55e" }}
+        />
 
         {articles.map((article: ArticleType, index: number) => (
           <div
@@ -96,7 +100,10 @@ export default async function Home() {
         ))}
       </div>
       <div className="glow -right-32 max-md:-right-40"></div>
-
+      <Glow
+        className="absolute z-10 w-0 h-0 bg-white shadow-glow rounded-full -right-32 mb-24 max-md:-right-48"
+        style={{ boxShadow: "0 0 200px 130px #c026d3" }}
+      />
       <Footer />
     </main>
   );

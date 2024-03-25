@@ -13,6 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Title from "@/app/components/Title";
+import Glow from "@/app/components/Glow";
 
 type ArticleType = {
   params: {
@@ -70,6 +71,10 @@ export default async function App({ params }: ArticleType) {
           text={data.title}
           className="m-3 flex flex-col items-center justify-center text-3xl"
         />
+        <Glow
+          className="absolute z-10 w-0 h-0 bg-white shadow-glow rounded-full -right-32 mt-16 max-sm:-right-48"
+          style={{ boxShadow: "0 0 200px 130px #c026d3" }}
+        />
       </CardTitle>
       <CardDescription className="text-center">
         {data.date} - {data.author}
@@ -97,7 +102,10 @@ export default async function App({ params }: ArticleType) {
           </p>
         </CardFooter>
       </Card>
-
+      <Glow
+        className="absolute z-10 w-0 h-0 bg-white shadow-glow rounded-full -left-32 mb-24 max-sm:-left-48"
+        style={{ boxShadow: "0 0 200px 130px #22c55e" }}
+      />
       <Footer />
     </>
   );

@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(inter.className, "bg-background")}>
+      <body className={clsx(inter.className, "bg-background overflow-x-hidden")}>
         <ThemeProvider attribute="class" defaultTheme="system">
           {children}
         </ThemeProvider>
