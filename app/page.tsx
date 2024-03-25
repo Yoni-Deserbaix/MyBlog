@@ -52,7 +52,7 @@ export default async function Home() {
       />
 
       <div className="flex items-center gap-10 flex-col pt-14">
-      <div className="glow -left-32 mt-16 max-md:-left-38"></div>
+      <div className="glow -left-32 mt-16 max-md:-left-48"></div>
 
         {articles.map((article: ArticleType, index: number) => (
           <div

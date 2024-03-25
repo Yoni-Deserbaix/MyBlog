@@ -68,7 +68,7 @@ export default async function App({ params }: ArticleType) {
       <CardTitle className="text-center text-3xl font-bold max-sm:text-2xl">
         <Title
           text={data.title}
-          className="m-3 flex flex-col mt-28 items-center justify-center text-3xl"
+          className="m-3 flex flex-col items-center justify-center text-3xl"
         />
       </CardTitle>
       <CardDescription className="text-center">
