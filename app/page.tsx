@@ -52,6 +52,8 @@ export default async function Home() {
       />
 
       <div className="flex items-center gap-10 flex-col pt-14">
+      <div className="glow -left-32 mt-16 max-md:-left-38"></div>
+
         {articles.map((article: ArticleType, index: number) => (
           <div
             className="card w-1/3 bg-base-100 shadow-xl max-lg:w-1/2 max-md:w-2/3 max-sm:w-11/12"
@@ -93,6 +95,8 @@ export default async function Home() {
           </div>
         ))}
       </div>
+      <div className="glow -right-32 max-md:-right-40"></div>
+
       <Footer />
     </main>
   );
