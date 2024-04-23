@@ -1,19 +1,16 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { ResolvingMetadata, Metadata } from "next";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import Glow from "@/app/components/Glow";
+import Title from "@/app/components/Title";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Title from "@/app/components/Title";
-import Glow from "@/app/components/Glow";
+import { Metadata, ResolvingMetadata } from "next";
+import Image from "next/image";
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
 
 type ArticleType = {
   params: {
@@ -58,10 +55,8 @@ export async function generateMetadata(
   };
 }
 
-// [] = route dynamique
 export default async function App({ params }: ArticleType) {
   const data = await getData(params.id);
-  // console.log(data);
   return (
     <>
       <Navbar />

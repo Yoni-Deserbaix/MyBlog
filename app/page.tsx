@@ -1,18 +1,17 @@
-import Image from "next/image";
-import Link from "next/link";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Title from "./components/Title";
+import Image from "next/image";
+import Link from "next/link";
+import Footer from "./components/Footer";
 import Glow from "./components/Glow";
+import Navbar from "./components/Navbar";
+import Title from "./components/Title";
 
 // Definition of types
 type ArticleType = {

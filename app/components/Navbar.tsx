@@ -1,7 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ThemeToggle } from "../theme/ThemeToggle";
-import { Github, Linkedin, Mail, Menu, MenuIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Menubar,
@@ -9,9 +5,12 @@ import {
   MenubarItem,
   MenubarMenu,
   MenubarSeparator,
-  MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar";
+import { Github, Linkedin, Mail, MenuIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { ThemeToggle } from "../theme/ThemeToggle";
 
 export default function NavBar() {
   return (
