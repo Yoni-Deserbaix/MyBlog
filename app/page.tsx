@@ -37,7 +37,11 @@ export default function Home() {
         if (error) {
           throw new Error(error.message);
         }
-        setArticle(data);
+        // sort id articles in descending order
+        const sortedArticles = data.sort(
+          (a: ArticleType, b: ArticleType) => b.id - a.id
+        );
+        setArticle(sortedArticles);
       } catch (error) {
         setError(error);
       } finally {
