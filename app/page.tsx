@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import Glow from "./components/Glow";
 import Navbar from "./components/Navbar";
@@ -24,41 +26,30 @@ type ArticleType = {
   linkImage: string;
 };
 
-async function getArticles() {
-  try {
-    const res = await fetch("https://data-blog.onrender.com/articles", {
-      // Revalidation data every 10 seconds
-      next: {
-        revalidate: 10,
-      },
-    });
+export default function Home() {
+  const [Article, setArticle] = useState<any>([]);
+  const [error, setError] = useState<any>(null);
 
-    const data = await res.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching articles:", error);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data, error } = await supabase.from("articles").select();
+        if (error) {
+          throw new Error(error.message);
+        }
+        setArticle(data);
+      } catch (error) {
+        setError(error);
+      } finally {
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (error) {
+    return <div className="text-center mt-12">Erreur : {error}</div>;
   }
-}
-
-export default async function Home() {
-  const articles: ArticleType[] = await getArticles();
-
-  // INSERT INTO articles
-  const setNewView = async () => {
-    const { data, error } = await supabase.from("articles").insert({
-      id: "",
-      title: "",
-      content: "",
-      author: "Yoni Deserbaix",
-      date: "",
-      linkImage: "",
-    });
-    // log data or error message
-    if (data) console.log(data);
-    if (error) console.log(error);
-  };
-
-  setNewView();
 
   return (
     <main>
@@ -68,17 +59,16 @@ export default async function Home() {
         text="Artciles récents"
         className="flex flex-col mt-28 items-center justify-center text-3xl -rotate-3"
       />
-
       <div className="flex items-center gap-10 flex-col pt-14">
         <Glow
           className="absolute z-10 w-0 h-0 bg-white shadow-glow rounded-full -left-32 max-sm:-left-48"
           style={{ boxShadow: "0 0 200px 130px #22c55e" }}
         />
 
-        {articles.map((article: ArticleType, index: number) => (
+        {Article.map((article: ArticleType, index: number) => (
           <div
             className="card w-1/3 bg-base-100 shadow-xl max-lg:w-1/2 max-md:w-2/3 max-sm:w-11/12"
-            key={article.id}
+            key={index}
           >
             <Card>
               <CardHeader>
