@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import Glow from "./components/Glow";
 import Navbar from "./components/Navbar";
 import Title from "./components/Title";
+import { supabase } from "./config/supabase";
 
 // Definition of types
 type ArticleType = {
@@ -41,6 +42,23 @@ async function getArticles() {
 
 export default async function Home() {
   const articles: ArticleType[] = await getArticles();
+
+  // INSERT INTO articles
+  const setNewView = async () => {
+    const { data, error } = await supabase.from("articles").insert({
+      id: "",
+      title: "",
+      content: "",
+      author: "Yoni Deserbaix",
+      date: "",
+      linkImage: "",
+    });
+    // log data or error message
+    if (data) console.log(data);
+    if (error) console.log(error);
+  };
+
+  setNewView();
 
   return (
     <main>
