@@ -20,6 +20,8 @@ type ArticleTypeByID = {
   };
 };
 
+export const revalidate = 1000;
+
 export default function Post({ params: { id } }: ArticleTypeByID) {
   const [data, setData] = useState<any>(null);
   const [error, setError] = useState<any>(null);
