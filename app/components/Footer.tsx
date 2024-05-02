@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <div>
       <div className="max-w-6xl m-auto">
-        <div className="border-t mt-10"></div>
+        <div className="border-t mt-28"></div>
         <div className="flex">
           <div className="mx-auto p-10">
             <div className="text-xl font-bold underline underline-offset-8 decoration-green-500 -rotate-2">
