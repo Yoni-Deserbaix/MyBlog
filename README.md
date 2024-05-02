@@ -15,6 +15,8 @@ Checkout the project online 👉 [here](https://yoni-deserbaix-my-blog.vercel.ap
 - Next.js  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" height="15" alt="nextjs logo"  />
 - TypeScript <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="15" alt="typescript logo"  />
 - Tailwind <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" height="15" alt="tailwindcss logo"  />
+- Supabase <img src="https://cdn.simpleicons.org/supabase/3ECF8E" height="15" alt="supabase logo"  />
+- PostgreSQL <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" height="15" alt="postgresql logo"  />
 - [Shadcn/UI](https://ui.shadcn.com/)
 
 ## Skills Gained 🌟 
