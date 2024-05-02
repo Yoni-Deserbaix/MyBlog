@@ -1,4 +1,6 @@
+"use client";
 import Title from "@/app/components/Title";
+import { supabase } from "@/app/config/supabase";
 import {
   Card,
   CardDescription,
@@ -6,7 +8,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Glow from "@/components/ui/Glow";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 
@@ -16,24 +20,40 @@ type ArticleTypeByID = {
   };
 };
 
-export const revalidate = 1000;
+export default function Post({ params: { id } }: ArticleTypeByID) {
+  const [data, setData] = useState<any>(null);
+  const [error, setError] = useState<any>(null);
 
-import { supabase } from "@/app/config/supabase";
-import Glow from "@/components/ui/Glow";
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const { data, error } = await supabase
+          .from("articles")
+          .select()
+          .match({ id })
+          .single();
+        if (error) {
+          throw new Error(error.message);
+        }
+        setData(data);
+      } catch (error) {
+        setError(error);
+      }
+    }
+    fetchData();
+  }, [id]);
 
-export default async function Post({ params: { id } }: ArticleTypeByID) {
-  const { data } = await supabase
-    .from("articles")
-    .select()
-    .match({ id })
-    .single();
+  if (error) {
+    return <div className="text-center mt-12">Erreur : {error}</div>;
+  }
+
   return (
     <>
       <Navbar />
-      <div className="mt-28 flex justify-center items-center gap-10 flex-col"></div>
+      <div className="mt-28 flex justify-center items-center gap-10 flex-col" />
       <CardTitle className="text-center text-3xl font-bold max-sm:text-2xl">
         <Title
-          text={data.title}
+          text={data?.title}
           className="m-3 flex flex-col items-center justify-center text-3xl"
         />
         <Glow
@@ -42,28 +62,35 @@ export default async function Post({ params: { id } }: ArticleTypeByID) {
         />
       </CardTitle>
       <CardDescription className="text-center">
-        {new Date(data.date).toLocaleDateString()} - {data.author}
+        {data && (
+          <>
+            {new Date(data.date).toLocaleDateString()} - {data.author}
+          </>
+        )}
       </CardDescription>
       <Card className="flex flex-col m-auto mt-14 bg-base-100 shadow-xl w-1/3 bg-base-100 max-xl:w-2/4 max-lg:w-3/4 max-md:w-2/3 max-sm:w-11/12">
         <CardHeader>
           <figure>
-            <Image
-              src={data.idLinkImage || data.linkImage}
-              width={1000}
-              height={1000}
-              alt="Article Image"
-              className="w-full rounded-xl"
-            />
+            {data && (
+              <Image
+                src={data.idLinkImage || data.linkImage}
+                width={1000}
+                height={1000}
+                alt="Article Image"
+                className="w-full rounded-xl"
+              />
+            )}
           </figure>
         </CardHeader>
         <CardFooter>
           <p className="my-10 w-full m-auto font-medium text-lg">
-            {data.content.split("\n").map((line: string, index: number) => (
-              <span key={index}>
-                {line}
-                <br />
-              </span>
-            ))}
+            {data &&
+              data.content.split("\n").map((line: string, index: number) => (
+                <span key={index}>
+                  {line}
+                  <br />
+                </span>
+              ))}
           </p>
         </CardFooter>
       </Card>

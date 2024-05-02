@@ -27,7 +27,6 @@ export default function Home() {
         setArticle(sortedArticles);
       } catch (error) {
         setError(error);
-      } finally {
       }
     };
 
