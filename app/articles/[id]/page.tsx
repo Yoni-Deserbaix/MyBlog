@@ -13,7 +13,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-
+import Loading from "../../loading";
 type ArticleTypeByID = {
   params: {
     id: number;
@@ -73,7 +73,9 @@ export default function Post({ params: { id } }: ArticleTypeByID) {
       <Card className="flex flex-col m-auto mt-14 bg-base-100 shadow-xl w-1/3 bg-base-100 max-xl:w-2/4 max-lg:w-3/4 max-md:w-2/3 max-sm:w-11/12">
         <CardHeader>
           <figure>
-            {data && (
+            {!data ? (
+              <Loading />
+            ) : (
               <Image
                 src={data.idLinkImage || data.linkImage}
                 width={1000}

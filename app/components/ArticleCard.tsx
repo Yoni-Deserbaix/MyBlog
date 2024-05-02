@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
+import Loading from "../loading";
 import Title from "./Title";
 
 import { ArticleType } from "../types";
@@ -22,13 +23,17 @@ export default function ArticleCard({ article }: ArticleProps) {
       <Card>
         <CardHeader>
           <figure>
-            <Image
-              src={article.linkImage}
-              width={2000}
-              height={2000}
-              alt="Article Image"
-              className="w-full rounded-xl"
-            />
+            {!article ? (
+              <Loading />
+            ) : (
+              <Image
+                src={article.linkImage}
+                width={2000}
+                height={2000}
+                alt="Article Image"
+                className="w-full rounded-xl"
+              />
+            )}
           </figure>
           <Link href={`/articles/${article.id}`}>
             <CardTitle className="text-xl pt-4">
