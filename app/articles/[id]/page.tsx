@@ -1,4 +1,3 @@
-import Glow from "@/app/components/Glow";
 import Title from "@/app/components/Title";
 import {
   Card,
@@ -7,56 +6,27 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 
-type ArticleType = {
+type ArticleTypeByID = {
   params: {
-    id: string;
+    id: number;
   };
 };
 
 export const revalidate = 1000;
 
-const getData = async (id: string) => {
-  try {
-    const res = await fetch(`https://data-blog.onrender.com/articles/${id}`);
-    const data = await res.json();
-    return data;
-  } catch (err) {
-    console.log("Error fetching articles", err);
-  }
-};
+import { supabase } from "@/app/config/supabase";
+import Glow from "@/components/ui/Glow";
 
-// Dynamic Metadata
-export async function generateMetadata(
-  { params }: ArticleType,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  // read route params
-  const id = params.id;
-
-  // fetch data
-  const article = await getData(id);
-
-  // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images || [];
-
-  return {
-    title: article.title,
-    description: article.content,
-    authors: [
-      {
-        name: article.author,
-      },
-    ],
-  };
-}
-
-export default async function App({ params }: ArticleType) {
-  const data = await getData(params.id);
+export default async function Post({ params: { id } }: ArticleTypeByID) {
+  const { data } = await supabase
+    .from("articles")
+    .select()
+    .match({ id })
+    .single();
   return (
     <>
       <Navbar />
@@ -72,7 +42,7 @@ export default async function App({ params }: ArticleType) {
         />
       </CardTitle>
       <CardDescription className="text-center">
-        {data.date} - {data.author}
+        {new Date(data.date).toLocaleDateString()} - {data.author}
       </CardDescription>
       <Card className="flex flex-col m-auto mt-14 bg-base-100 shadow-xl w-1/3 bg-base-100 max-xl:w-2/4 max-lg:w-3/4 max-md:w-2/3 max-sm:w-11/12">
         <CardHeader>
