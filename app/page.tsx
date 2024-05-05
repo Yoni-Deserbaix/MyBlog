@@ -1,5 +1,3 @@
-"use client";
-import { useEffect, useState } from "react";
 import Glow from "../components/ui/Glow";
 import ArticleCard from "./components/ArticleCard";
 import Footer from "./components/Footer";
@@ -9,33 +7,17 @@ import { supabase } from "./config/supabase";
 
 import { ArticleType } from "./types";
 
-export default function Home() {
-  const [Article, setArticle] = useState<any>([]);
-  const [error, setError] = useState<any>(null);
+export const revalidate = 10;
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { data, error } = await supabase.from("articles").select();
-        if (error) {
-          throw new Error(error.message);
-        }
-        // sort id articles in descending order
-        const sortedArticles = data.sort(
-          (a: ArticleType, b: ArticleType) => b.id - a.id
-        );
-        setArticle(sortedArticles);
-      } catch (error) {
-        setError(error);
-      }
-    };
+export default async function Home() {
+  const { data: articles } = await supabase.from("articles").select();
 
-    fetchData();
-  }, []);
+  // sort id articles in descending order
+  const sortedArticles = articles?.sort(
+    (a: ArticleType, b: ArticleType) => b.id - a.id
+  );
 
-  if (error) {
-    return <div className="text-center mt-12">Erreur : {error}</div>;
-  }
+  const data = sortedArticles;
 
   return (
     <main>
@@ -51,9 +33,10 @@ export default function Home() {
           style={{ boxShadow: "0 0 200px 130px #22c55e" }}
         />
 
-        {Article.map((article: ArticleType, index: number) => (
-          <ArticleCard key={index} article={article} />
-        ))}
+        {data &&
+          data.map((article: ArticleType, index: number) => (
+            <ArticleCard key={index} article={article} />
+          ))}
       </div>
       <div className="glow -right-32 max-md:-right-40"></div>
       <Glow
