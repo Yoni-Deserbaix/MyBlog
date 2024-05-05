@@ -1,7 +1,7 @@
 import Title from "@/app/components/Title";
 import { supabase } from "@/app/config/supabase";
 import Glow from "@/components/ui/Glow";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import ArticleCardByID from "../../components/ArticleCardByID";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
@@ -13,36 +13,36 @@ type ArticleTypeByID = {
 };
 
 // Dynamic Metadata
-export async function generateMetadata(
-  { params }: ArticleTypeByID,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({ params }: ArticleTypeByID) {
   // read route params
   const id = params.id;
 
-  // fetch data
   const { data } = await supabase
     .from("articles")
     .select()
     .match({ id })
     .single();
-  // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images || [];
-
-  return {
-    title: data.title,
-    description: data.content,
-    authors: [
-      {
-        name: data.author,
-      },
-    ],
+  const metadata: Metadata = {
+    title: `${data.title} - MyBlog - Yoni Deserbaix`,
+    authors: {
+      name: "Yoni Deserbaix",
+    },
+    description: data.description,
+    metadataBase: new URL(
+      `https://yoni-deserbaix-my-blog.vercel.app/${data.id}`
+    ),
+    alternates: {
+      canonical: `https://yoni-deserbaix-my-blog.vercel.app/${data.id}`,
+    },
     openGraph: {
-      images: [data.linkImage, ...previousImages],
+      title: `${data.title} - MyBlog - Yoni Deserbaix`,
+      description: data.description,
+      url: `https://yoni-deserbaix-my-blog.vercel.app/${data.id}`,
     },
   };
-}
 
+  return metadata;
+}
 export const revalidate = 10;
 
 export default async function Post({ params: { id } }: ArticleTypeByID) {
