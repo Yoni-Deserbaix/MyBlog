@@ -1,6 +1,7 @@
 import Title from "@/app/components/Title";
 import { supabase } from "@/app/config/supabase";
 import Glow from "@/components/ui/Glow";
+import { Metadata, ResolvingMetadata } from "next";
 import ArticleCardByID from "../../components/ArticleCardByID";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
@@ -10,6 +11,37 @@ type ArticleTypeByID = {
     id: number;
   };
 };
+
+// Dynamic Metadata
+export async function generateMetadata(
+  { params }: ArticleTypeByID,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const id = params.id;
+
+  // fetch data
+  const { data } = await supabase
+    .from("articles")
+    .select()
+    .match({ id })
+    .single();
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title: data.title,
+    description: data.content,
+    authors: [
+      {
+        name: data.author,
+      },
+    ],
+    openGraph: {
+      images: [data.linkImage, ...previousImages],
+    },
+  };
+}
 
 export const revalidate = 10;
 
