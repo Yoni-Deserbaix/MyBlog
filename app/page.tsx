@@ -10,14 +10,10 @@ import { ArticleType } from "./types";
 export const revalidate = 10;
 
 export default async function Home() {
-  const { data: articles } = await supabase.from("articles").select();
-
-  // sort id articles in descending order
-  const sortedArticles = articles?.sort(
-    (a: ArticleType, b: ArticleType) => b.id - a.id
-  );
-
-  const data = sortedArticles;
+  const { data: articles } = await supabase
+    .from("articles")
+    .select()
+    .order("id", { ascending: false });
 
   return (
     <main>
@@ -33,8 +29,8 @@ export default async function Home() {
           style={{ boxShadow: "0 0 200px 130px #22c55e" }}
         />
 
-        {data &&
-          data.map((article: ArticleType, index: number) => (
+        {articles &&
+          articles.map((article: ArticleType, index: number) => (
             <ArticleCard key={index} article={article} />
           ))}
       </div>
