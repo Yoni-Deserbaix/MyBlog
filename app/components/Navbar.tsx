@@ -31,7 +31,7 @@ export default function NavBar() {
                     <MenubarSeparator />
                     <MenubarItem>
                       <Link
-                        href="https://yoni-deserbaix-potfolio.vercel.app/"
+                        href="https://yoni-deserbaix-portfolio.vercel.app/"
                         target="_blank"
                       >
                         Portfolio
@@ -96,7 +96,7 @@ export default function NavBar() {
                 </li>
                 <li>
                   <Link
-                    href="https://yoni-deserbaix-potfolio.vercel.app/"
+                    href="https://yoni-deserbaix-portfolio.vercel.app/"
                     target="_blank"
                   >
                     <Button variant="ghost" className="text-lg font-semibold">
